@@ -1,195 +1,156 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 	<head>
-		<title>Alexandre HONORÉ - Portfolio</title>
+		<title>Alexandre Honoré | Portfolio Game Programming</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			.lang-switch {
-				display: inline-block;
-				min-width: 2.75em;
-				text-align: center;
-				padding: 0.2em 0.6em;
-				border: solid 1px rgba(255, 255, 255, 0.55);
-				border-radius: 999px;
-				line-height: 1.4;
-				background: rgba(0, 0, 0, 0.2);
-			}
-
-			.lang-switch.active {
-				background: rgba(255, 255, 255, 0.15);
-				border-color: rgba(255, 255, 255, 0.7);
-			}
-
-			.lang-switcher {
-				position: fixed;
-				top: 1.25em;
-				left: 1.25em;
-				z-index: 20000;
-				display: flex;
-				gap: 0.5em;
-			}
-		</style>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="description"
+			content="Portfolio d'Alexandre Honoré, orienté programmation gameplay, systèmes et outils pour le jeu vidéo."
+		/>
+		<link rel="stylesheet" href="assets/css/portfolio.css" />
 	</head>
-	<body class="is-preload">
-		<div class="lang-switcher">
-			<a href="index.html" class="lang-switch active">FR</a>
-			<a href="index-en.html" class="lang-switch">EN</a>
-		</div>
+	<body>
+		<div class="site-wrap">
+			<div class="orb one"></div>
+			<div class="orb two"></div>
+			<div class="orb three"></div>
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">À propos</a></li>
-							<li><a href="#competences">Compétences</a></li>
-							<li><a href="#contact">Me retrouver</a></li>
-						</ul>
-					</nav>
+			<header class="topbar"></header>
+
+			<main>
+				<div class="container">
+					<section class="hero hero-single reveal">
+						<article class="panel hero-text">
+							<span class="eyebrow">Portfolio</span>
+							<p class="hero-name">Alexandre Honoré</p>
+							<h1>Programmation gameplay, systèmes et outils pour le jeu vidéo.</h1>
+							<p class="lead">
+								Étudiant en double diplôme international <b>ingénieur informatique</b> à
+								Polytech Lyon et <b>maîtrise en jeux vidéo</b> à l'UQAC, je cherche un stage
+								d'une durée de 22 semaines à débuter à partir d'août.
+							</p>
+							<div class="cta-row">
+								<a class="button primary" href="projects/index.html">Explorer les projets</a>
+								<a class="button secondary" href="resources/cv_honore_alexandre.pdf" target="_blank" rel="noopener noreferrer">Voir mon CV</a>
+							</div>
+						</article>
+					</section>
+
+					<section class="section reveal">
+						<div class="section-head">
+							<div>
+								<h2>Projets sélectionnés</h2>
+							</div>
+							<a class="button secondary" href="projects/index.html">Catalogue complet</a>
+						</div>
+						<div class="project-grid">
+							<article class="project-card">
+								<img src="images/iti_main.jpg" alt="Capture du jeu It Takes IO" />
+								<div class="card-body">
+									<div class="tag-row">
+										<span class="tag">C++</span>
+										<span class="tag">SFML</span>
+										<span class="tag">Coop locale</span>
+									</div>
+									<h3>It Takes IO</h3>
+									<p class="lead">Puzzle-plateformer à deux basé sur la logique électronique et la communication.</p>
+									<a class="button secondary" href="projects/it-takes-io.html">Voir le projet</a>
+								</div>
+							</article>
+
+							<article class="project-card">
+								<img src="images/nde_main.jpg" alt="Capture du jeu Le Nectar des Étoiles" />
+								<div class="card-body">
+									<div class="tag-row">
+										<span class="tag">Unreal Engine</span>
+										<span class="tag">Narratif</span>
+										<span class="tag">Jam 48h</span>
+									</div>
+									<h3>Le Nectar des Etoiles</h3>
+									<p class="lead">Jeu narratif à fins multiples, 1re place WonderJam Hiver 2026.</p>
+									<a class="button secondary" href="projects/le-nectar-des-etoiles.html">Voir le projet</a>
+								</div>
+							</article>
+
+							<article class="project-card">
+								<img src="images/pkb_profile.png" alt="Capture du bot Discord PokeBot" />
+								<div class="card-body">
+									<div class="tag-row">
+										<span class="tag">JavaScript</span>
+										<span class="tag">MongoDB</span>
+										<span class="tag">Discord</span>
+									</div>
+									<h3>PokeBot Discord</h3>
+									<p class="lead">Boucle de progression persistante: collection, économie et zones de difficulté.</p>
+									<a class="button secondary" href="projects/pokebot-discord.html">Voir le projet</a>
+								</div>
+							</article>
+						</div>
+					</section>
+
+					<section id="competences" class="section reveal">
+						<div class="section-head">
+							<div>
+								<h2>Compétences techniques</h2>
+								<p>Compétences techniques et production pour contribuer vite dans une équipe jeu.</p>
+							</div>
+						</div>
+						<div class="skills-grid">
+							<article class="skill-card">
+								<h3>Programmation gameplay</h3>
+								<p><span class="kword">C</span>, <span class="kword">C++</span>, <span class="kword">C#</span>, <span class="kword">JavaScript</span> pour implémenter des mécaniques fiables et testables.</p>
+							</article>
+							<article class="skill-card">
+								<h3>Moteurs</h3>
+								<p><span class="kword">Unreal Engine</span> et <span class="kword">Godot</span>, avec compréhension des pipelines de prod et de build.</p>
+							</article>
+							<article class="skill-card">
+								<h3>Architecture logicielle</h3>
+								<p><span class="kword">POO</span>, modularité, lecture de code legacy, optimisation et maintenabilité.</p>
+							</article>
+							<article class="skill-card">
+								<h3>Collaboration</h3>
+								<p><span class="kword">Git</span>, <span class="kword">Perforce</span>, organisation des tâches, suivi de livraison et communication d'équipe.</p>
+							</article>
+						</div>
+					</section>
+
+					<section id="contact" class="section reveal">
+						<div class="section-head">
+							<div>
+								<h2>Contact</h2>
+								<p>Disponible pour échanger autour de projets, collaborations et opportunités dans le jeu vidéo.</p>
+							</div>
+						</div>
+						<div class="contact-box">
+							<div class="link-list">
+								<a class="contact-link" href="https://www.linkedin.com/in/honore-alexandre/" target="_blank" rel="noopener noreferrer">
+									<strong>LinkedIn</strong>
+									<span>linkedin.com/in/honore-alexandre</span>
+								</a>
+								<a class="contact-link" href="https://alexandre-h.itch.io" target="_blank" rel="noopener noreferrer">
+									<strong>itch.io</strong>
+									<span>alexandre-h.itch.io</span>
+								</a>
+								<a class="contact-link" href="resources/cv_honore_alexandre.pdf" target="_blank" rel="noopener noreferrer">
+									<strong>CV PDF</strong>
+									<span>Téléchargement direct</span>
+								</a>
+							</div>
+							<aside class="note">
+								<h3>Focus actuel</h3>
+								<p>
+									Concevoir des expériences interactives solides, de l'idée au prototype
+									jouable, avec une attention forte à la qualité de code.
+								</p>
+							</aside>
+						</div>
+					</section>
+					<footer class="foot"></footer>
 				</div>
-			</section>
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Alexandre Honoré</h1>
-							<p>Étudiant en double diplôme international <b>ingénieur informatique</b> + <b>maîtrise en jeux vidéo</b>, je cherche un stage d’une durée de 22 semaines à partir de septembre 2026.</p>
-						</div>
-					</section>
-
-				<!-- Projets -->
-					<section id="projets" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/iti_main.jpg" alt="It Takes IO" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>It Takes IO</h2>
-									<p>Réalisation d’un jeu de puzzle-plateformer 2 joueurs en c++ à l’aide de la bibliothèque graphique SFML.</p>
-									<ul class="actions">
-										<li><a href="projects/it-takes-io.html" class="button">Voir le projet</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/nde_main.jpg" alt="Le Nectar des Étoiles" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Le Nectar des Étoiles</h2>
-									<p>Jeu narratif développé en 48h et décrochant la <b>1ère place</b> lors de la WonderJam d’hiver 2026 de l’UQAC sponsorisé par Ubisoft Saguenay</p>
-									<ul class="actions">
-										<li><a href="projects/le-nectar-des-etoiles.html" class="button">Voir le projet</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pkb_profile.png" alt="PokeBot Discord" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>PokeBot Discord</h2>
-									<p>Développement d'un bot Discord en JavaScript: capture de Pokémon, gestion d'une ferme de baies, économie et progression par zones. Hébergé sur Heroku avec persistance MongoDB via Mongoose.</p>
-									<ul class="actions">
-										<li><a href="projects/pokebot-discord.html" class="button">Voir le projet</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-
-				<!-- Compétences -->
-					<section id="competences" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Compétences</h2>
-							<p>Compétences mobilisables en stage/alternance, construites dans mon double-diplôme: Ingénieur informatique à Polytech Lyon et Maîtrise en jeux vidéo à l'UQAC.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Langages de programmation</h3>
-									<p><b>C</b>, <b>C++</b>, <b>C#</b> et <b>JavaScript</b> pour développer des fonctionnalités fiables, maintenir du code existant et livrer rapidement sur des projets concrets.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-gamepad"></span>
-									<h3>Moteurs de jeu</h3>
-									<p><b>Unreal Engine</b> et <b>Godot</b> pour concevoir et développer des jeux vidéo, avec une connaissance des pipelines de production et de l'architecture des moteurs modernes.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-brain"></span>
-									<h3>Programmation orientée objet</h3>
-									<p>Conception orientée <b>objet</b> (encapsulation, héritage, polymorphisme) pour produire un code clair, <b>modulaire</b> et facile à faire <b>évoluer</b> en équipe.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-users"></span>
-									<h3>Ingénierie logicielle</h3>
-									<p>Travail en <b>équipe</b>, organisation des tâches, documentation technique et suivi de production pour contribuer efficacement à un cycle de développement complet.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-tools"></span>
-									<h3>Algorithmie avancée</h3>
-									<p>Analyse de <b>complexité</b>, choix des structures de données et <b>optimisation</b> pour résoudre des problèmes techniques de manière efficace.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-code-branch"></span>
-									<h3>Contrôle de version</h3>
-									<p><b>Git</b> et <b>Perforce</b> pour gérer les versions, collaborer en équipe et assurer l'intégrité du code dans des projets complexes.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-mobile-alt"></span>
-									<h3>Bases de données</h3>
-									<p><b>SQL</b> pour modéliser, interroger et exploiter les données de façon cohérente, avec une attention sur la qualité et la performance des requêtes.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-server"></span>
-									<h3>Développement web</h3>
-									<p><b>HTML</b>, <b>CSS</b>, <b>PHP</b> et <b>JavaScript</b> pour réaliser des interfaces lisibles et des fonctionnalités web maintenables côté front et back.</p>
-								</section>
-							</div>
-						</div>
-					</section>
-
-				<!-- Me retrouver -->
-					<section id="contact" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Me retrouver</h2>
-							<p>Retrouvez-moi sur ces plateformes ou consultez mon CV.</p>
-							<ul class="contact">
-								<li>
-									<h3>LinkedIn</h3>
-									<a href="https://www.linkedin.com/in/honore-alexandre/" target="_blank">linkedin.com/in/alexandre-honore</a>
-								</li>
-								<li>
-									<h3>itch.io</h3>
-									<a href="https://alexandre-h.itch.io" target="_blank">alexandre-honore.itch.io</a>
-								</li>
-								<li>
-									<h3>CV</h3>
-									<a href="resources/cv_honore_alexandre.pdf" target="_blank">Télécharger mon CV</a>
-								</li>
-							</ul>
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+			</main>
+		</div>
+		<script src="assets/js/portfolio.js"></script>
 	</body>
 </html>
