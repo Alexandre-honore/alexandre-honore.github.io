@@ -868,6 +868,7 @@ body.lightbox-open {
   background: var(--surface);
   box-shadow: var(--shadow);
   min-height: 420px;
+  touch-action: pan-y;
 }
 
 .carousel-wrapper.is-transitioning {
@@ -890,6 +891,7 @@ body.lightbox-open {
   will-change: transform, opacity;
   user-select: none;
   cursor: grab;
+  touch-action: pan-y;
 }
 
 .carousel-track.grabbing {
@@ -930,6 +932,8 @@ body.carousel-dragging {
   transition: transform 0.25s ease, border-color 0.25s ease;
   animation: slideInCard 0.4s ease-out;
   cursor: pointer;
+  -webkit-user-drag: none;
+  touch-action: pan-y;
 }
 
 @keyframes slideInCard {
@@ -974,6 +978,7 @@ body.carousel-dragging {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: top center;
+  -webkit-user-drag: none;
 }
 
 .carousel-card-body {

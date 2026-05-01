@@ -90,7 +90,7 @@
     const card = document.createElement('article');
     card.className = 'carousel-card';
     card.innerHTML = `
-      <img src="${project.image}" alt="${project.title}" />
+      <img src="${project.image}" alt="${project.title}" draggable="false" />
       <div class="carousel-card-body">
         <div class="tag-row">
           ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join('')}
