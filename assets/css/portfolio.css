@@ -936,6 +936,11 @@ body.carousel-dragging {
   touch-action: pan-y;
 }
 
+.carousel-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 @keyframes slideInCard {
   from {
     opacity: 0;
@@ -971,6 +976,33 @@ body.carousel-dragging {
 .carousel-card:hover {
   transform: translateY(-5px);
   border-color: rgba(56, 214, 180, 0.45);
+}
+
+.carousel-card:hover .card-hint,
+.carousel-card:focus-visible .card-hint {
+  color: var(--text);
+}
+
+.card-hint {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-hint-icon {
+  transition: transform 0.2s ease;
+}
+
+.carousel-card:hover .card-hint-icon,
+.carousel-card:focus-visible .card-hint-icon {
+  transform: translateX(3px);
 }
 
 .carousel-card img {

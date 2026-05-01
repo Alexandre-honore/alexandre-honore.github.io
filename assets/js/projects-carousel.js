@@ -73,7 +73,7 @@
         },
       ];
 
-  const buttonText = isEnglish ? 'Open case study' : 'Lire le projet';
+  const cardHintText = isEnglish ? 'Open project' : 'Ouvrir le projet';
   const categories = [...new Set(projectsData.map((project) => project.category))];
 
   const categoriesNav = document.getElementById('categoriesNav');
@@ -89,6 +89,10 @@
   const createCard = (project) => {
     const card = document.createElement('article');
     card.className = 'carousel-card';
+    card.tabIndex = 0;
+    card.setAttribute('role', 'link');
+    card.setAttribute('aria-label', `${cardHintText}: ${project.title}`);
+    card.dataset.projectLink = project.link;
     card.innerHTML = `
       <img src="${project.image}" alt="${project.title}" draggable="false" />
       <div class="carousel-card-body">
@@ -97,12 +101,21 @@
         </div>
         <h3>${project.title}</h3>
         <p class="lead">${project.description}</p>
-        <a class="button secondary" href="${project.link}" style="margin-top: auto;">
-          ${buttonText}
-        </a>
+        <div class="card-hint" aria-hidden="true">
+          <span>${cardHintText}</span>
+          <span class="card-hint-icon">→</span>
+        </div>
       </div>
     `;
     return card;
+  };
+
+  const openProjectCard = (card) => {
+    const projectLink = card?.dataset?.projectLink;
+
+    if (projectLink) {
+      window.location.href = projectLink;
+    }
   };
 
   const buildTrackForCategory = (category) => {
@@ -246,12 +259,15 @@
       return;
     }
 
+    const pressedCard = event.target.closest('.carousel-card');
+
     pointerDown = true;
     dragStartX = event.clientX;
     dragStartY = event.clientY;
     dragDistance = 0;
     dragDirection = null;
     isScrolling = null;
+    onPointerDown.pressedCard = pressedCard;
     
     currentTrack.classList.add('grabbing');
     document.body.classList.add('carousel-dragging');
@@ -322,6 +338,9 @@
       return;
     }
 
+    const pressedCard = onPointerDown.pressedCard;
+    const releasedCard = document.elementFromPoint(event.clientX, event.clientY)?.closest('.carousel-card');
+
     pointerDown = false;
     currentTrack.classList.remove('grabbing');
     if (incomingTrack) {
@@ -341,6 +360,11 @@
     const commitThreshold = Math.max(80, wrapperWidth * 0.25);
 
     if (!incomingTrack || !dragDirection) {
+      if (pressedCard && pressedCard === releasedCard && Math.abs(dragDistance) < commitThreshold) {
+        openProjectCard(pressedCard);
+      }
+
+      onPointerDown.pressedCard = null;
       currentTrack.style.transition = '';
       return;
     }
@@ -371,6 +395,7 @@
         updateCarouselHeight(categories[currentCategoryIndex]);
         setActiveCategoryButton(currentCategoryIndex);
         endTransition();
+        onPointerDown.pressedCard = null;
         nextTrack.removeEventListener('transitionend', handleTransitionEnd);
       };
 
@@ -392,6 +417,7 @@
 
       removeIncomingTrack();
       dragDirection = null;
+      onPointerDown.pressedCard = null;
       endTransition();
       nextTrack.removeEventListener('transitionend', handleTransitionEnd);
     };
@@ -400,6 +426,18 @@
   };
 
   carouselWrapper.addEventListener('pointerdown', onPointerDown, { passive: true });
+  carouselWrapper.addEventListener('keydown', (event) => {
+    const activeCard = document.activeElement?.closest?.('.carousel-card');
+
+    if (!activeCard) {
+      return;
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openProjectCard(activeCard);
+    }
+  });
   window.addEventListener('pointermove', onPointerMove, { passive: true });
   window.addEventListener('pointerup', commitOrRevertDrag, { passive: true });
   window.addEventListener('pointercancel', commitOrRevertDrag, { passive: true });
