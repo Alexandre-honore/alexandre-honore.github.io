@@ -886,10 +886,13 @@ body.lightbox-open {
   left: 60px;
   right: 60px;
   display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
   z-index: 1;
   gap: 1rem;
   align-items: flex-start;
-  overflow-y: hidden;
+  overflow: hidden;
   padding: 1rem;
   scroll-behavior: smooth;
   /* animated transform */
@@ -969,6 +972,16 @@ body.carousel-dragging {
 
 .carousel-nav-next {
   right: 1rem;
+}
+
+.carousel-swipe-hint {
+  display: none;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .carousel-card {
@@ -1093,6 +1106,15 @@ body.carousel-dragging {
     flex: 0 0 100%;
   }
 
+  .carousel-nav {
+    display: none;
+  }
+
+  .carousel-track {
+    left: 0.75rem;
+    right: 0.75rem;
+  }
+
   .carousel-categories {
     overflow-x: hidden;
     flex-wrap: nowrap;
@@ -1112,6 +1134,10 @@ body.carousel-dragging {
 
   .carousel-categories::-webkit-scrollbar {
     height: 4px;
+  }
+
+  .carousel-swipe-hint {
+    display: block;
   }
 
   .hero-text {

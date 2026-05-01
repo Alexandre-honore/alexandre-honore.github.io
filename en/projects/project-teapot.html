@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project Teapot | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Project Teapot, an asymmetric co-op puzzle game that mixes 3D and 2D through a projection-based mechanic."
+    />
+    <link rel="stylesheet" href="../../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#projects">Projects</a>
+            <a class="active" href="project-teapot.html">Project Teapot</a>
+            <span class="lang-switch">
+              <a href="../../projects/project-teapot.html">FR</a>
+              <a class="active" href="project-teapot.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Multiplayer project</span>
+              <h1>Project Teapot</h1>
+              <p class="lead">
+                An asymmetrical co-op puzzle game that relies on constant communication. Solve puzzles by making 3D actions affect a shared 2D plane.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../../images/project-teapot/banner.png" alt="Project Teapot banner" />
+              </div>
+
+              <section class="content-block">
+                <h2>Main technical challenge: 2D/3D projection</h2>
+                <p>
+                  The core mechanic of Project Teapot, called <i>The Crayon</i>, was the biggest technical challenge of the game. It projects the 3D environment in real time onto the 2D player plane.
+                </p>
+                <p>
+                  In practice, the 3D player manipulates the level’s geometry through translation and rotation, and each move instantly changes the topology seen by the 2D player. This required a robust system that could:
+                </p>
+                <ul>
+                  <li>Compute collisions between complex 3D objects and a 2D gameplay axis.</li>
+                  <li>Handle different material states: solid boxes create projected platforms, while transparent boxes remove obstacles from the 2D plane.</li>
+                  <li>Keep physics and visuals perfectly synchronized over the network between both clients.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Concept and art direction</h2>
+                <p>
+                  Set in a futuristic scientific complex and guided by a robot, two players test their adaptability. The visual direction emphasizes the duality of the gameplay:
+                </p>
+                <ul>
+                  <li><strong>3D world:</strong> Low-poly assets with flat shading for strong spatial readability.</li>
+                  <li><strong>2D world:</strong> A hand-drawn Paint-like style that contrasts with the clean scientific facility.</li>
+                </ul>
+                <p>
+                  A game inspired by <i>Portal</i>, <i>It Takes Two</i> and <i>Split Fiction</i>.
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>Game trailer</h2>
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 2rem;">
+                  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/-W5LEhewvUU" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Gallery</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../../images/project-teapot/exemple_projection2d.png" alt="3D to 2D projection example" />
+                    <figcaption>Real-time projection mechanic</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/project-teapot/crayonneur.png" alt="The Crayon device in action" />
+                    <figcaption>Manipulation device: The Crayon</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/project-teapot/room2.png" alt="Puzzle room 2" />
+                    <figcaption>Low-poly 3D environment</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/project-teapot/lobby.png" alt="Game lobby" />
+                    <figcaption>Main menu and waiting room</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Multiplayer and architecture</h2>
+                <ul>
+                  <li><strong>Network:</strong> Client-server architecture with Steam API integration. The room host runs the server.</li>
+                  <li><strong>Matchmaking:</strong> Direct invitations through the in-game Steam friends list.</li>
+                  <li><strong>Communication:</strong> Built-in push-to-talk system.</li>
+                  <li><strong>Controls:</strong> Full keyboard/mouse and controller support, with Steam Input disabled when needed.</li>
+                </ul>
+              </section>
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Tech sheet</h3>
+                  <div class="pill-list">
+                    <span class="pill">Type: puzzle / co-op</span>
+                    <span class="pill">View: asymmetric (3D/2D)</span>
+                    <span class="pill">Network: P2P (Steam API)</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>Development team</h3>
+                  <ul>
+                    <li><strong>Adam Gragnic</strong> - Developer</li>
+                    <li><strong>Alexandre Honoré</strong> - Developer</li>
+                    <li><strong>Antonin Sylvestre</strong> - Developer & 2D animation</li>
+                    <li><strong>Florian Hême</strong> - Developer</li>
+                    <li><strong>Thomas Blanché</strong> - Developer & level design</li>
+                  </ul>
+                </section>
+                <section>
+                  <h3>What this project shows</h3>
+                  <ul>
+                    <li>Complex math-driven mechanics, including projection and dynamic collision.</li>
+                    <li>Network integration and Steam API usage.</li>
+                    <li>Collaborative work within a 5-developer team.</li>
+                    <li>Asymmetrical gameplay and synchronized states.</li>
+                  </ul>
+                </section>
+                <section style="margin-top: 1rem;">
+                  <a class="button secondary" href="../index.html">Back to home</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span>Previous project: <a href="cellular-automata.html">Cellular Automata</a></span>
+            <span>Next project: <a href="neural-networks.html">Neural Networks</a></span>
+            <span><a href="../index.html">Home</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../../assets/js/portfolio.js"></script>
+  </body>
+</html>

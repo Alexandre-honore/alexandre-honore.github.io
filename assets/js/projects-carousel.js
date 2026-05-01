@@ -6,7 +6,7 @@
   const projectsData = isEnglish
     ? [
         {
-          category: 'C++',
+          category: 'Games',
           title: 'It Takes IO',
           tags: ['C++', 'SFML', 'Local co-op'],
           description: 'Two-player puzzle where signals 0 and 1 travel through logic circuits.',
@@ -14,7 +14,7 @@
           link: 'projects/it-takes-io.html',
         },
         {
-          category: 'Java',
+          category: 'Games',
           title: 'sokIOban',
           tags: ['Java', 'Swing', 'Puzzle'],
           description: 'Sokoban clone with modular architecture and asset management.',
@@ -22,7 +22,7 @@
           link: 'projects/sokIOban.html',
         },
         {
-          category: 'Unreal Engine',
+          category: 'Games',
           title: 'Le Nectar des Étoiles',
           tags: ['Unreal Engine', 'Narrative', '48h Jam'],
           description: 'Choice-driven narrative game, 1st place at WonderJam Winter 2026.',
@@ -30,7 +30,7 @@
           link: 'projects/le-nectar-des-etoiles.html',
         },
         {
-          category: 'JavaScript',
+          category: 'Games',
           title: 'PokeBot Discord',
           tags: ['JavaScript', 'MongoDB', 'Discord'],
           description: 'Persistent bot with collection, economy, and area-based progression.',
@@ -38,17 +38,57 @@
           link: 'projects/pokebot-discord.html',
         },
         {
-          category: 'PHP',
+          category: 'Web',
+          title: 'Network Coverage',
+          tags: ['Node.js', 'MySQL', 'Data viz'],
+          description: 'Interactive map and data table for French network coverage.',
+          image: `${basePath}/images/telecom/telecom_acceuil.png`,
+          link: 'projects/telecom.html',
+        },
+        {
+          category: 'Web',
           title: 'IsIWeb4Shop',
           tags: ['PHP', 'MySQL', 'E-commerce'],
           description: 'Functional online shop with cart, orders, and PDF invoice generation.',
           image: `${basePath}/images/isiweb4shop/isi_acceuil.png`,
           link: 'projects/isiweb4shop.html',
         },
+        {
+          category: 'Games',
+          title: 'Bump Up',
+          tags: ['VR', 'Unity', 'Physics'],
+          description: 'VR climbing game focused on arm-based locomotion and altitude progression.',
+          image: `${basePath}/images/bump-up/bu_mountain_fullview.png`,
+          link: 'projects/bump-up.html',
+        },
+        {
+          category: 'Academic',
+          title: 'Cellular Automata',
+          tags: ['Java', 'JavaFX', 'Simulation'],
+          description: 'Configurable cellular automata simulator with a generic rule engine.',
+          image: `${basePath}/images/automates/at_average_cross.png`,
+          link: 'projects/automates-cellulaires.html',
+        },
+        {
+          category: 'Games',
+          title: 'Project Teapot',
+          tags: ['Steam API', 'Co-op', '3D/2D'],
+          description: 'Asymmetric co-op puzzle game where 3D actions affect a 2D plane.',
+          image: `${basePath}/images/project-teapot/banner.png`,
+          link: 'projects/project-teapot.html',
+        },
+        {
+          category: 'Academic',
+          title: 'Neural Networks',
+          tags: ['Python', 'NumPy', 'Matplotlib'],
+          description: 'Self-organizing maps study applied to a robotic arm.',
+          image: `${basePath}/images/reseaux-neurones/carte_neurone.png`,
+          link: 'projects/reseaux-neurones.html',
+        },
       ]
     : [
         {
-          category: 'C++',
+          category: 'Jeux',
           title: 'It Takes IO',
           tags: ['C++', 'SFML', 'Coop locale'],
           description: 'Puzzle coop où deux signaux 0/1 traversent des circuits logiques.',
@@ -56,7 +96,7 @@
           link: 'projects/it-takes-io.html',
         },
         {
-          category: 'Java',
+          category: 'Jeux',
           title: 'sokIOban',
           tags: ['Java', 'Swing', 'Puzzle'],
           description: 'Clone de Sokoban avec architecture modulaire et gestion d\'assets.',
@@ -64,7 +104,7 @@
           link: 'projects/sokIOban.html',
         },
         {
-          category: 'Unreal Engine',
+          category: 'Jeux',
           title: 'Le Nectar des Étoiles',
           tags: ['Unreal Engine', 'Narratif', 'Jam 48h'],
           description: 'Jeu narratif à choix multiples, 1re place WonderJam hiver 2026.',
@@ -72,7 +112,7 @@
           link: 'projects/le-nectar-des-etoiles.html',
         },
         {
-          category: 'JavaScript',
+          category: 'Jeux',
           title: 'PokeBot Discord',
           tags: ['JavaScript', 'MongoDB', 'Discord'],
           description: 'Bot avec économie persistante, collection et progression par zones.',
@@ -80,12 +120,52 @@
           link: 'projects/pokebot-discord.html',
         },
         {
-          category: 'PHP',
+          category: 'Web',
+          title: 'Couverture Réseau',
+          tags: ['Node.js', 'MySQL', 'Dataviz'],
+          description: 'Carte interactive et tableau de données sur la couverture réseau française.',
+          image: `${basePath}/images/telecom/telecom_acceuil.png`,
+          link: 'projects/telecom.html',
+        },
+        {
+          category: 'Web',
           title: 'IsIWeb4Shop',
           tags: ['PHP', 'MySQL', 'E-commerce'],
           description: 'Boutique en ligne fonctionnelle avec panier, commandes et factures PDF.',
           image: `${basePath}/images/isiweb4shop/isi_acceuil.png`,
           link: 'projects/isiweb4shop.html',
+        },
+        {
+          category: 'Jeux',
+          title: 'Bump Up',
+          tags: ['VR', 'Unity', 'Physique'],
+          description: 'Jeu VR d’escalade centré sur la locomotion par les bras et la progression en altitude.',
+          image: `${basePath}/images/bump-up/bu_mountain_fullview.png`,
+          link: 'projects/bump-up.html',
+        },
+        {
+          category: 'Académique',
+          title: 'Automates Cellulaires',
+          tags: ['Java', 'JavaFX', 'Simulation'],
+          description: 'Simulateur d’automates cellulaires configurable avec moteur de règles générique.',
+          image: `${basePath}/images/automates/at_average_cross.png`,
+          link: 'projects/automates-cellulaires.html',
+        },
+        {
+          category: 'Jeux',
+          title: 'Project Teapot',
+          tags: ['Steam API', 'Coop', '3D/2D'],
+          description: 'Jeu coop asymétrique où les actions en 3D modifient un plan 2D.',
+          image: `${basePath}/images/project-teapot/banner.png`,
+          link: 'projects/project-teapot.html',
+        },
+        {
+          category: 'Académique',
+          title: 'Réseaux de Neurones',
+          tags: ['Python', 'NumPy', 'Matplotlib'],
+          description: 'Étude des cartes auto-organisatrices appliquée à un bras robotique.',
+          image: `${basePath}/images/reseaux-neurones/carte_neurone.png`,
+          link: 'projects/reseaux-neurones.html',
         },
       ];
 
@@ -101,6 +181,11 @@
   }
 
   window.__portfolioCarouselInitialized = true;
+
+  const swipeHint = document.createElement('p');
+  swipeHint.className = 'carousel-swipe-hint';
+  swipeHint.textContent = isEnglish ? 'Swipe to browse projects' : 'Glissez pour parcourir les projets';
+  carouselWrapper.insertAdjacentElement('afterend', swipeHint);
 
   const createCard = (project) => {
     const card = document.createElement('article');
@@ -125,6 +210,29 @@
     `;
     return card;
   };
+
+  const getCardsPerRow = () => {
+    if (window.innerWidth <= 760) {
+      return 1;
+    }
+
+    if (window.innerWidth <= 1020) {
+      return 2;
+    }
+
+    return 3;
+  };
+
+  const calculateHeightForProjectCount = (projectCount) => {
+    const rows = Math.max(1, Math.ceil(projectCount / getCardsPerRow()));
+    const cardHeight = 380;
+    const rowGap = 16;
+    const verticalPadding = 32;
+
+    return rows * cardHeight + (rows - 1) * rowGap + verticalPadding;
+  };
+
+  const getMaxProjectCount = () => Math.max(...categories.map((category) => projectsData.filter((project) => project.category === category).length));
 
   const openProjectCard = (card) => {
     const projectLink = card?.dataset?.projectLink;
@@ -209,17 +317,19 @@
 
   const calculateHeightForCategory = (category) => {
     const projectCount = projectsData.filter((project) => project.category === category).length;
-    const cardHeight = 380;
-    const padding = 32;
-    return cardHeight + padding;
+    return calculateHeightForProjectCount(projectCount);
   };
 
   const updateCarouselHeight = (category) => {
-    const height = calculateHeightForCategory(category);
+    const height = calculateHeightForProjectCount(getMaxProjectCount());
     carouselWrapper.style.minHeight = `${height}px`;
   };
 
   updateCarouselHeight(initialCategory);
+
+  window.addEventListener('resize', () => {
+    updateCarouselHeight(categories[currentCategoryIndex]);
+  });
 
   const startTransition = () => {
     carouselWrapper.classList.add('is-transitioning');

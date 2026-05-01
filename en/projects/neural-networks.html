@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Neural Networks | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An AI project about self-organizing maps, parameter analysis and robotic arm application."
+    />
+    <link rel="stylesheet" href="../../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#projects">Projects</a>
+            <a class="active" href="neural-networks.html">Neural Networks</a>
+            <span class="lang-switch">
+              <a href="../../projects/reseaux-neurones.html">FR</a>
+              <a class="active" href="neural-networks.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Academic project</span>
+              <h1>Neural Networks</h1>
+              <p class="lead">
+                A deep dive into self-organizing maps (SOM), parameter analysis and a practical application for a robotic arm.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../../images/reseaux-neurones/carte_neurone.png" alt="Neural map learned for the robotic arm" />
+              </div>
+
+              <section class="content-block">
+                <h2>Overview</h2>
+                <p>
+                  This AI project, completed in a pair, focuses on unsupervised learning through Kohonen self-organizing maps. The goal was to approach the topic scientifically by testing, quantifying and visualizing the effect of learning parameters before applying the result to a practical case: predicting the movement of a robotic arm.
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>Theory and algorithm analysis</h2>
+                <p>
+                  A simulation function was used to study how the algorithm behaves on uniform and non-uniform data sets. The analysis focused on three core parameters:
+                </p>
+                <ul>
+                  <li><strong>Learning rate (η):</strong> Ideally around 0.05. Too high a value prevents convergence, while a value of 1 directly overlays neurons on the inputs without global organisation.</li>
+                  <li><strong>Neighborhood width (σ):</strong> A parameter that controls how densely the map self-organizes. If too low, the neurons do not organize; if too high, the map becomes too concentrated around the center.</li>
+                  <li><strong>Time step (N):</strong> Set to 30,000 for the final tests. It has limited impact on simple datasets, but a higher N helps stabilize self-organization.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Application: robotic arm</h2>
+                <p>
+                  The trained model was then used to solve both forward and inverse kinematics on a two-joint robotic arm.
+                </p>
+                <ul>
+                  <li><strong>Spatial and motor prediction:</strong> By finding the winning neuron, the algorithm can infer the spatial position (x, y) from motor angles (θ1, θ2), and vice versa.</li>
+                  <li><strong>Trajectory generation:</strong> By mathematically interpolating motor positions between a start and an end point, the map predicts the sequence of spatial positions followed by the robot hand.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Gallery and results</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../../images/reseaux-neurones/carte_neurone.png" alt="Neural map after training" />
+                    <figcaption>Final self-organized map for the robotic arm</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/reseaux-neurones/position_bras.png" alt="Predicted versus real spatial positions" />
+                    <figcaption>Predicted and real arm trajectories</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/reseaux-neurones/eta-uniforme.png" alt="Graph showing eta evolution" />
+                    <figcaption>Error evolution as a function of η</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Technical architecture</h2>
+                <ul>
+                  <li><strong>Language:</strong> Python.</li>
+                  <li><strong>Matrix operations:</strong> NumPy, used for vector weights, Euclidean distances and spatial interpolation.</li>
+                  <li><strong>Data visualization:</strong> Matplotlib, used to plot error evolution and generate maps and trajectories.</li>
+                </ul>
+              </section>
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Tech sheet</h3>
+                  <div class="pill-list">
+                    <span class="pill">Type: machine learning</span>
+                    <span class="pill">Language: Python</span>
+                    <span class="pill">Math: NumPy</span>
+                    <span class="pill">Dataviz: Matplotlib</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>What this project shows</h3>
+                  <ul>
+                    <li>Rigorous scientific and experimental approach.</li>
+                    <li>Mathematical understanding of neural networks (Kohonen, SOM).</li>
+                    <li>Hyperparameter tuning and analysis (η, σ).</li>
+                    <li>Applying AI to physics and kinematics.</li>
+                    <li>Generating performance analysis charts.</li>
+                  </ul>
+                </section>
+                <section style="margin-top: 1.5rem;">
+                  <a class="button primary" href="https://github.com/Coaraa/projet-reseau-de-neurones" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </section>
+                <section style="margin-top: 1rem;">
+                  <a class="button secondary" href="../index.html">Back to home</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span>Previous project: <a href="project-teapot.html">Project Teapot</a></span>
+            <span><a href="../index.html">Home</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../../assets/js/portfolio.js"></script>
+  </body>
+</html>

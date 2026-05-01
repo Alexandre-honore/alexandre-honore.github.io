@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Network Coverage | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An interactive network coverage viewer built as a map and data table application."
+    />
+    <link rel="stylesheet" href="../../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#projects">Projects</a>
+            <a class="active" href="telecom.html">Network Coverage</a>
+            <span class="lang-switch">
+              <a href="../../projects/telecom.html">FR</a>
+              <a class="active" href="telecom.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Project</span>
+              <h1>Network Coverage</h1>
+              <p class="lead">
+                An interactive view of network coverage in France, intended both for professionals looking for blind spots and for private users checking home eligibility.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../../images/telecom/telecom_acceuil.png" alt="Telecom project homepage" />
+              </div>
+
+              <section class="content-block">
+                <h2>Overview</h2>
+                <p>
+                  This project provides an interactive visualization of network coverage in France through a map interface and data tables. It uses a database of French municipalities to map access precisely, while offering speed-based filters.
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>Main features</h2>
+                <ul>
+                  <li><strong>Interactive visualization:</strong> Free exploration of the French map to inspect overall coverage.</li>
+                  <li><strong>Dynamic zoom:</strong> Municipalities appear in more detail as you zoom into a region.</li>
+                  <li><strong>Throughput filtering:</strong> Coverage can be isolated using specific speed thresholds.</li>
+                  <li><strong>Data updates:</strong> The structure is designed to reflect recent network rollouts.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Gallery</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../../images/telecom/telecom_map_unzoom.png" alt="Unzoomed map view" />
+                    <figcaption>Overall coverage view</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/telecom/telecom_map_zoom.png" alt="Zoomed municipality view" />
+                    <figcaption>Zoom and municipality reveal</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/telecom/telecom_city_detail.png" alt="Detailed city coverage" />
+                    <figcaption>Coverage details by municipality</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Technical architecture</h2>
+                <h3>Environment and database</h3>
+                <ul>
+                  <li><strong>Node.js & npm:</strong> Runtime and package manager for the server.</li>
+                  <li><strong>Database:</strong> MySQL, locally hosted with XAMPP/Laragon.</li>
+                  <li><strong>Geographic data:</strong> The <code>communes.sql</code> bootstrap file stores coordinates and statistics.</li>
+                </ul>
+
+                <h3>Runtime structure</h3>
+                <ul>
+                  <li><strong>Configuration:</strong> <code>config.json</code> binds the server to the database.</li>
+                  <li><strong>Local server:</strong> Port 3000 used during development and for the mapping interface.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Learning outcomes</h2>
+                <ul>
+                  <li>Integration of an interactive mapping library.</li>
+                  <li>Database connection and querying between Node.js and MySQL.</li>
+                  <li>Processing and displaying large data sets (French municipalities).</li>
+                  <li>Interactive filters that update the visual rendering in real time.</li>
+                </ul>
+              </section>
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Tech sheet</h3>
+                  <div class="pill-list">
+                    <span class="pill">Type: data viz / mapping</span>
+                    <span class="pill">Stack: Node.js</span>
+                    <span class="pill">DB: MySQL</span>
+                    <span class="pill">Tools: npm, Git</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>What this project shows</h3>
+                  <ul>
+                    <li>Data-driven interface development.</li>
+                    <li>Relational database handling for web apps.</li>
+                    <li>Local client-server architecture.</li>
+                    <li>Applied UX for mapping tools.</li>
+                  </ul>
+                </section>
+                <section>
+                  <a class="button secondary" href="../index.html">Back to home</a>
+                </section>
+                <section style="margin-top: 1rem;">
+                  <a class="button primary" href="https://github.com/Alexandre-honore/telecom" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span>Previous project: <a href="isiweb4shop.html">IsIWeb4Shop</a></span>
+            <span>Next project: <a href="bump-up.html">Bump Up</a></span>
+            <span><a href="../index.html">Home</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../../assets/js/portfolio.js"></script>
+  </body>
+</html>

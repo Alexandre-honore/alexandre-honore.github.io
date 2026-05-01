@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cellular Automata | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A Java project for simulating and visualizing cellular automata with a fully configurable rule engine."
+    />
+    <link rel="stylesheet" href="../../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#projects">Projects</a>
+            <a class="active" href="cellular-automata.html">Cellular Automata</a>
+            <span class="lang-switch">
+              <a href="../../projects/automates-cellulaires.html">FR</a>
+              <a class="active" href="cellular-automata.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Java project</span>
+              <h1>Cellular Automata</h1>
+              <p class="lead">
+                A simulation platform for complex systems, built around a generic rule engine that interprets fully customisable transition rules.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../../images/automates/at_average_cross.png" alt="Average automaton visualization" />
+              </div>
+
+              <section class="content-block">
+                <h2>Overview</h2>
+                <p>
+                  This project implements a wide range of cellular automata, mathematical models used to simulate how cells evolve in a grid. The application includes a complete graphical interface for observing complex behaviour emerging from local rules, well beyond pre-programmed classic automata.
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>The main technical challenge: a custom rule engine</h2>
+                <p>
+                  The largest technical challenge was avoiding hardcoding. Instead of coding every automaton statically, we built a generic engine capable of interpreting JSON configuration files at runtime.
+                </p>
+                <p>
+                  This lets users define their own automata from scratch:
+                </p>
+                <ul>
+                  <li><strong>Structure:</strong> Define dimensionality and the list of possible states (the alphabet).</li>
+                  <li><strong>Weighted neighborhood:</strong> Specify exact neighbor coordinates and assign weights, for example to simulate wind in a forest fire model.</li>
+                  <li><strong>Logic and randomness:</strong> Define transition tables and probabilities that sum to 1 to introduce stochastic behaviour.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Classic automata implemented</h2>
+                <p>With that engine, several models could be recreated quickly:</p>
+                <ul>
+                  <li><strong>Game of Life:</strong> The classic 2D automaton showing self-organisation.</li>
+                  <li><strong>Forest fire propagation:</strong> Simulation with spread probabilities and spontaneous ignition.</li>
+                  <li><strong>1D automata:</strong> Exploration of elementary rules such as Rule 30 using binary rule numbers.</li>
+                  <li><strong>Continuous rules (Average & Majority):</strong> Models for heat waves or consensus in arbitrary dimensions.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Interface features</h2>
+                <ul>
+                  <li><strong>Hexagonal support:</strong> Rendering and neighborhood adaptation for hex grids.</li>
+                  <li><strong>Map editing:</strong> Interactive drawing tools, state replacement, random generation and save/load support.</li>
+                  <li><strong>Simulation control:</strong> Play, pause, step-by-step advance and runtime speed adjustments.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Gallery</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../../images/automates/at_gameoflife.gif" alt="Game of Life animation" />
+                    <figcaption>Game of Life (2D)</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/automates/at_wood_fire.gif" alt="Forest fire animation" />
+                    <figcaption>Forest fire spread with wind and probabilities</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/automates/at_rule30.png" alt="Rule 30" />
+                    <figcaption>1D automaton: Rule 30</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/automates/at_rule18.png" alt="Rule 18" />
+                    <figcaption>1D automaton: Rule 18</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Technical architecture</h2>
+                <ul>
+                  <li><strong>Language:</strong> Java 24.</li>
+                  <li><strong>GUI:</strong> JavaFX with an MVC architecture (FXML files).</li>
+                  <li><strong>JSON engine:</strong> Dynamic parsing and interpretation of rule files into Java object logic.</li>
+                  <li><strong>Modularity:</strong> Clear separation between the logical core, the rule engines and the GUI.</li>
+                  <li><strong>Build system:</strong> Gradle.</li>
+                </ul>
+              </section>
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Tech sheet</h3>
+                  <div class="pill-list">
+                    <span class="pill">Java 24</span>
+                    <span class="pill">JavaFX</span>
+                    <span class="pill">MVC</span>
+                    <span class="pill">JSON parsing</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>What this project shows</h3>
+                  <ul>
+                    <li>Design of a dynamic generic engine.</li>
+                    <li>Algorithmic abstraction from hardcoded rules to interpreted data.</li>
+                    <li>Stochastic logic and complex neighborhoods.</li>
+                    <li>Object-oriented design and software architecture in Java.</li>
+                  </ul>
+                </section>
+                <section style="margin-top: 1.5rem;">
+                  <a class="button primary" href="https://github.com/antonin-slv/AutomateCellulaire.git" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </section>
+                <section style="margin-top: 1rem;">
+                  <a class="button secondary" href="../index.html">Back to home</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span>Previous project: <a href="bump-up.html">Bump Up</a></span>
+            <span>Next project: <a href="project-teapot.html">Project Teapot</a></span>
+            <span><a href="../index.html">Home</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../../assets/js/portfolio.js"></script>
+  </body>
+</html>
