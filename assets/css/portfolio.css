@@ -1011,10 +1011,25 @@ body.carousel-dragging {
 
   .carousel-categories {
     overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-btn {
+    flex: 0 0 auto;
   }
 
   .carousel-categories::-webkit-scrollbar {
     height: 4px;
+  }
+
+  .hero-text {
+    padding: 1.4rem;
+  }
+
+  .hero.hero-single .hero-text {
+    padding: 1.4rem;
   }
 }
 
