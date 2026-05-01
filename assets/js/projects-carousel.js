@@ -320,6 +320,24 @@
     return calculateHeightForProjectCount(projectCount);
   };
 
+  const maybeScrollToCarouselStart = () => {
+    if (window.innerWidth > 760) {
+      return;
+    }
+
+    const categoriesTop = categoriesNav.getBoundingClientRect().top + window.scrollY;
+    const wrapperTop = carouselWrapper.getBoundingClientRect().top + window.scrollY;
+    const targetTop = Math.min(categoriesTop, wrapperTop) - 12;
+
+    // Only scroll back when the viewport is below the carousel start.
+    if (window.scrollY > targetTop + 24) {
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth',
+      });
+    }
+  };
+
   const updateCarouselHeight = (category) => {
     const height = calculateHeightForProjectCount(getMaxProjectCount());
     carouselWrapper.style.minHeight = `${height}px`;
@@ -387,6 +405,7 @@
       currentTrack = nextTrack;
       incomingTrack = null;
       currentCategoryIndex = nextIndex;
+      maybeScrollToCarouselStart();
       endTransition();
       nextTrack.removeEventListener('transitionend', handleTransitionEnd);
     };
@@ -539,6 +558,7 @@
         dragDirection = null;
         updateCarouselHeight(categories[currentCategoryIndex]);
         setActiveCategoryButton(currentCategoryIndex);
+        maybeScrollToCarouselStart();
         endTransition();
         onPointerDown.pressedCard = null;
         nextTrack.removeEventListener('transitionend', handleTransitionEnd);
