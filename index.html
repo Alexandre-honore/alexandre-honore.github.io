@@ -31,7 +31,7 @@
 								d'une durée de 22 semaines à débuter à partir d'août.
 							</p>
 							<div class="cta-row">
-								<a class="button primary" href="projects/index.html">Explorer les projets</a>
+								<a class="button primary" href="#projects">Explorer les projets</a>
 								<a class="button secondary" href="resources/cv_honore_alexandre.pdf" target="_blank" rel="noopener noreferrer">Voir mon CV</a>
 							</div>
 						</article>
@@ -40,52 +40,18 @@
 					<section id="projects" class="section reveal">
 						<div class="section-head">
 							<div>
-								<h2>Projets sélectionnés</h2>
+								<h2>Projets par technologie</h2>
 							</div>
-							<a class="button secondary" href="projects/index.html">Catalogue complet</a>
 						</div>
-						<div class="project-grid">
-							<article class="project-card">
-								<img src="images/iti_main.jpg" alt="Capture du jeu It Takes IO" />
-								<div class="card-body">
-									<div class="tag-row">
-										<span class="tag">C++</span>
-										<span class="tag">SFML</span>
-										<span class="tag">Coop locale</span>
-									</div>
-									<h3>It Takes IO</h3>
-									<p class="lead">Puzzle-plateformer à deux basé sur la logique électronique et la communication.</p>
-									<a class="button secondary" href="projects/it-takes-io.html">Voir le projet</a>
+						<div class="carousel-container">
+							<div class="carousel-categories" id="categoriesNav">
+								<!-- Les catégories seront générées par JS -->
+							</div>
+							<div class="carousel-wrapper" id="carouselWrapper">
+								<div class="carousel-track" id="carouselTrack">
+									<!-- Les cartes seront générées par JS -->
 								</div>
-							</article>
-
-							<article class="project-card">
-								<img src="images/nde_main.jpg" alt="Capture du jeu Le Nectar des Étoiles" />
-								<div class="card-body">
-									<div class="tag-row">
-										<span class="tag">Unreal Engine</span>
-										<span class="tag">Narratif</span>
-										<span class="tag">Jam 48h</span>
-									</div>
-									<h3>Le Nectar des Etoiles</h3>
-									<p class="lead">Jeu narratif à fins multiples, 1re place WonderJam Hiver 2026.</p>
-									<a class="button secondary" href="projects/le-nectar-des-etoiles.html">Voir le projet</a>
-								</div>
-							</article>
-
-							<article class="project-card">
-								<img src="images/pkb_profile.png" alt="Capture du bot Discord PokeBot" />
-								<div class="card-body">
-									<div class="tag-row">
-										<span class="tag">JavaScript</span>
-										<span class="tag">MongoDB</span>
-										<span class="tag">Discord</span>
-									</div>
-									<h3>PokeBot Discord</h3>
-									<p class="lead">Boucle de progression persistante: collection, économie et zones de difficulté.</p>
-									<a class="button secondary" href="projects/pokebot-discord.html">Voir le projet</a>
-								</div>
-							</article>
+							</div>
 						</div>
 					</section>
 
@@ -150,6 +116,7 @@
 				</div>
 			</main>
 		</div>
+		<script src="assets/js/projects-carousel.js"></script>
 		<script src="assets/js/portfolio.js"></script>
 	</body>
 </html>

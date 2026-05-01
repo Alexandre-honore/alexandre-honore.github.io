@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IsIWeb4Shop | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="IsIWeb4Shop, a functional online shop demonstrating web development skills."
+    />
+    <link rel="stylesheet" href="../../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Projects</a>
+            <a class="active" href="isiweb4shop.html">IsIWeb4Shop</a>
+            <span class="lang-switch">
+              <a href="../../projects/isiweb4shop.html">FR</a>
+              <a class="active" href="isiweb4shop.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Project</span>
+              <h1>IsIWeb4Shop</h1>
+              <p class="lead">
+                A functional online shop demonstrating product navigation,
+                shopping cart management and simple payment. Lightweight MVC
+                architecture in PHP.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../../images/isiweb4shop/isi_acceuil.png" alt="IsIWeb4Shop homepage" />
+              </div>
+
+              <section class="content-block">
+                <h2>Overview</h2>
+                <p>
+                  IsIWeb4Shop is a fictional e-commerce shop designed as a portfolio
+                  project demonstrating full-stack web development skills. The project
+                  showcases a clean MVC architecture, user cart management, order
+                  handling and PDF invoice generation.
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>Key Features</h2>
+                <ul>
+                  <li><strong>Product Catalog:</strong> Category-based navigation with filtering and detailed product pages.</li>
+                  <li><strong>Shopping Cart:</strong> Add items, modify quantities, merge session/user cart.</li>
+                  <li><strong>Order Management:</strong> Create orders, manage delivery addresses, track status.</li>
+                  <li><strong>Authentication:</strong> User registration and login with password hashing, user and admin accounts.</li>
+                  <li><strong>Reviews & Ratings:</strong> Product review system with user ratings.</li>
+                  <li><strong>Invoice Generation:</strong> PDF export of orders.</li>
+                  <li><strong>Payment Handling:</strong> PayPal stub and cash payment options.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Gallery</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../../images/isiweb4shop/isi_create_account.png" alt="User registration" />
+                    <figcaption>User account creation</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/isiweb4shop/isi_panier.png" alt="Shopping cart" />
+                    <figcaption>Shopping cart management</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../../images/isiweb4shop/isi_facture.png" alt="PDF Invoice" />
+                    <figcaption>Generated invoice</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Technical Architecture</h2>
+                <h3>Language & Stack</h3>
+                <ul>
+                  <li><strong>PHP:</strong> Framework-less, lightweight MVC architecture.</li>
+                  <li><strong>Templating:</strong> Twig for views.</li>
+                  <li><strong>Database:</strong> MySQL.</li>
+                  <li><strong>UI:</strong> Bootstrap.</li>
+                </ul>
+
+                <h3>Project Structure</h3>
+                <ul>
+                  <li><strong>Controllers:</strong> Route handling and request logic.</li>
+                  <li><strong>Models:</strong> Database access (products, cart, accounts, checkout, etc.).</li>
+                  <li><strong>Views:</strong> Twig templates.</li>
+                  <li><strong>Static assets:</strong> CSS, images and resources.</li>
+                </ul>
+
+                <h3>Main Database Tables</h3>
+                <ul>
+                  <li>products, categories, orders, orderitems</li>
+                  <li>customers, logins, admin, delivery_addresses, reviews</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Learning Outcomes</h2>
+                <ul>
+                  <li>MVC architecture and separation of concerns.</li>
+                  <li>User session management and persistent shopping cart.</li>
+                  <li>Complete CRUD operations on products and orders.</li>
+                  <li>PDF generation and file handling.</li>
+                  <li>Authentication system with password hashing.</li>
+                  <li>E-commerce integration (cart, payments, address management).</li>
+                </ul>
+              </section>
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Tech Stack</h3>
+                  <div class="pill-list">
+                    <span class="pill">Type: e-commerce</span>
+                    <span class="pill">Language: PHP</span>
+                    <span class="pill">Template: Twig</span>
+                    <span class="pill">Database: MySQL</span>
+                    <span class="pill">UI: Bootstrap</span>
+                    <span class="pill">PDF: php.pdf</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>What This Project Shows</h3>
+                  <ul>
+                    <li>MVC architecture and design patterns.</li>
+                    <li>Complete e-commerce workflow.</li>
+                    <li>Coherent user flow and UX design.</li>
+                    <li>Robust database integration.</li>
+                    <li>Document generation (PDF).</li>
+                  </ul>
+                </section>
+                <section>
+                  <a class="button secondary" href="index.html">Back to projects</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span>Next project: <a href="pokebot-discord.html">PokeBot Discord</a></span>
+            <span><a href="../index.html">Home</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../../assets/js/portfolio.js"></script>
+  </body>
+</html>

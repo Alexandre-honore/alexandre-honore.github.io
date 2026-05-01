@@ -809,6 +809,210 @@ body.lightbox-open {
   overflow: hidden;
 }
 
+/* Carousel styles */
+.carousel-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.carousel-categories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.category-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.category-btn.active {
+  background: linear-gradient(135deg, var(--accent), #42d5ff);
+  border-color: var(--accent);
+  color: #06222b;
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  min-height: 420px;
+}
+
+.carousel-wrapper.is-transitioning {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.carousel-track {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 1;
+  gap: 1rem;
+  align-items: flex-start;
+  overflow-y: hidden;
+  padding: 1rem;
+  scroll-behavior: smooth;
+  /* animated transform */
+  transition: transform 360ms cubic-bezier(.22,.8,.36,1), opacity 240ms ease;
+  will-change: transform, opacity;
+  user-select: none;
+  cursor: grab;
+}
+
+.carousel-track.grabbing {
+  cursor: grabbing !important;
+}
+
+body.carousel-dragging {
+  cursor: grabbing !important;
+}
+
+.carousel-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.carousel-track::-webkit-scrollbar-thumb {
+  background: rgba(56, 214, 180, 0.3);
+  border-radius: 3px;
+}
+
+.carousel-track::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 214, 180, 0.6);
+}
+
+.carousel-card {
+  flex: 0 0 calc(33.333% - 0.67rem);
+  min-height: 380px;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(0);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  animation: slideInCard 0.4s ease-out;
+  cursor: pointer;
+}
+
+@keyframes slideInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide enter/exit helpers for tracks */
+.carousel-track.enter-from-right { transform: translateX(100%); }
+.carousel-track.enter-from-left { transform: translateX(-100%); }
+.carousel-track.to-center { transform: translateX(0%); }
+.carousel-track.exit-to-left { transform: translateX(-100%); }
+.carousel-track.exit-to-right { transform: translateX(100%); }
+
+/* active category button pop */
+.category-btn.active {
+  background: linear-gradient(135deg, var(--accent), #42d5ff);
+  border-color: var(--accent);
+  color: #06222b;
+  animation: popIn 0.28s ease-out;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.92); opacity: 0.85; }
+  60% { transform: scale(1.04); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.carousel-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 214, 180, 0.45);
+}
+
+.carousel-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.carousel-card-body {
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.carousel-card-body h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.carousel-card-body .lead {
+  font-size: 0.92rem;
+  max-width: none;
+}
+
+@media (max-width: 1020px) {
+  .carousel-card {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .carousel-card {
+    flex: 0 0 100%;
+  }
+
+  .carousel-categories {
+    overflow-x: auto;
+  }
+
+  .carousel-categories::-webkit-scrollbar {
+    height: 4px;
+  }
+}
+
 @media (max-width: 1020px) {
   .hero,
   .contact-box,
