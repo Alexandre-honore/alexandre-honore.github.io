@@ -14,6 +14,14 @@
           link: 'projects/it-takes-io.html',
         },
         {
+          category: 'Java',
+          title: 'sokIOban',
+          tags: ['Java', 'Swing', 'Puzzle'],
+          description: 'Sokoban clone with modular architecture and asset management.',
+          image: `${basePath}/images/sokIOban/sk_room0.png`,
+          link: 'projects/sokIOban.html',
+        },
+        {
           category: 'Unreal Engine',
           title: 'Le Nectar des Étoiles',
           tags: ['Unreal Engine', 'Narrative', '48h Jam'],
@@ -46,6 +54,14 @@
           description: 'Puzzle coop où deux signaux 0/1 traversent des circuits logiques.',
           image: `${basePath}/images/iti_main.jpg`,
           link: 'projects/it-takes-io.html',
+        },
+        {
+          category: 'Java',
+          title: 'sokIOban',
+          tags: ['Java', 'Swing', 'Puzzle'],
+          description: 'Clone de Sokoban avec architecture modulaire et gestion d\'assets.',
+          image: `${basePath}/images/sokIOban/sk_room0.png`,
+          link: 'projects/sokIOban.html',
         },
         {
           category: 'Unreal Engine',
@@ -141,6 +157,20 @@
     button.addEventListener('click', () => selectCategory(index));
     categoriesNav.appendChild(button);
   });
+
+  const navPrevButton = carouselWrapper.querySelector('.carousel-nav-prev');
+  const navNextButton = carouselWrapper.querySelector('.carousel-nav-next');
+
+  const handleNavPrev = () => {
+    selectCategory(getWrappedCategoryIndex(currentCategoryIndex - 1));
+  };
+
+  const handleNavNext = () => {
+    selectCategory(getWrappedCategoryIndex(currentCategoryIndex + 1));
+  };
+
+  if (navPrevButton) navPrevButton.addEventListener('click', handleNavPrev);
+  if (navNextButton) navNextButton.addEventListener('click', handleNavNext);
 
   const initialCategory = categories[0];
   carouselTrack.innerHTML = '';
@@ -256,6 +286,11 @@
 
   const onPointerDown = (event) => {
     if (isTransitioning) {
+      return;
+    }
+
+    // Ignore clicks on navigation buttons
+    if (event.target.closest('.carousel-nav')) {
       return;
     }
 

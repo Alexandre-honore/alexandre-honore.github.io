@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>sokIOban | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="sokIOban, clone de Sokoban en Java Swing avec architecture modulaire et gestion d'assets."
+    />
+    <link rel="stylesheet" href="../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Accueil</a>
+            <a href="index.html">Projets</a>
+            <a class="active" href="sokIOban.html">sokIOban</a>
+            <span class="lang-switch">
+              <a class="active" href="sokIOban.html">FR</a>
+              <a href="../en/projects/sokIOban.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Projet</span>
+              <h1>sokIOban</h1>
+              <p class="lead">
+                Clone de Sokoban en Java Swing où chaque niveau demande stratégie et réflexion.
+                Architecture modulaire mettant en avant la séparation Model/View et gestion d'assets.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../images/sokIOban/sk_room0.png" alt="sokIOban niveau initial" />
+              </div>
+
+              <section class="content-block">
+                <h2>Vue d'ensemble</h2>
+                <p>
+                  sokIOban est un puzzle game inspiré du classique Sokoban, implémenté en Java avec
+                  l'interface Swing. Le nom et le design visual sont une référence à mon projet
+                  <strong>It Takes IO</strong>, fusionnant les concepts de signaux binaires avec
+                  la mécanique de puzzle poussée de caisses. L'objectif : pousser toutes les caisses
+                  vers leurs emplacements respectifs en naviguant des niveaux à difficultés croissantes.
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>Mécaniques de jeu</h2>
+                <ul>
+                  <li><strong>Déplacement:</strong> Flèches directionnelles.</li>
+                  <li><strong>Objectif:</strong> Pousser les caisses sur les zones de dépôt.</li>
+                  <li><strong>Rechargement:</strong> Touche R pour recommencer le niveau.</li>
+                  <li><strong>Menu:</strong> Touche Esc pour revenir au menu principal.</li>
+                  <li><strong>Sélection personnage:</strong> Menu de sélection au démarrage.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Galerie</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../images/sokIOban/sk_room0.png" alt="Niveau état initial" />
+                    <figcaption>État initial</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/sokIOban/sk_room2.png" alt="Niveau 2" />
+                    <figcaption>Progression intermédiaire</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/sokIOban/sk_room2_solved.png" alt="Niveau 2 résolu" />
+                    <figcaption>Niveau complété</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Architecture technique</h2>
+                <h3>Langages et Outils</h3>
+                <ul>
+                  <li><strong>Java:</strong> Langage principal avec Swing pour l'interface.</li>
+                  <li><strong>Swing:</strong> UI réactive avec pattern Observer pour rafraîchissement.</li>
+                  <li><strong>ImageIO:</strong> Chargement et gestion des assets visuels.</li>
+                </ul>
+
+                <h3>Structure modulaire (par paquets)</h3>
+                <ul>
+                  <li><strong>Cell:</strong> Types de cellules (mur, sol, zone de dépôt).</li>
+                  <li><strong>Entity:</strong> Joueur, caisses et entités mobiles.</li>
+                  <li><strong>Vue:</strong> Composants visuels et rendering.</li>
+                  <li><strong>Enum:</strong> Énumérations (directions, états du jeu).</li>
+                </ul>
+
+                <h3>Fichiers clés</h3>
+                <ul>
+                  <li><strong>MF.java:</strong> Fenêtre principale et orchestration.</li>
+                  <li><strong>Menu.java:</strong> Système de menu (conçu via formulaire Menu.form).</li>
+                  <li><strong>Grid.java:</strong> Logique centralisée du jeu (grille, niveaux, cellules, entités).</li>
+                  <li><strong>Player.java:</strong> Entité joueur et mouvements.</li>
+                  <li><strong>Sound.java:</strong> Gestion intégration d'audio.</li>
+                </ul>
+
+                <h3>Gestion des ressources</h3>
+                <ul>
+                  <li><strong>Niveaux:</strong> Format texte stockés dans le dossier <code>levels/</code>.</li>
+                  <li><strong>Visuels:</strong> Images (PNG) du dossier <code>assets/</code>.</li>
+                  <li><strong>Audio:</strong> Fichiers musiques du dossier <code>musics/</code>.</li>
+                  <li><strong>Chemins relatifs:</strong> Gestion robuste des ressources indépendante du répertoire courant.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Points clés d'apprentissage</h2>
+                <ul>
+                  <li><strong>Architecture Model/View:</strong> Séparation nette des responsabilités.</li>
+                  <li><strong>Gestion d'assets:</strong> Chargement dynamique d'images et ressources.</li>
+                  <li><strong>Pattern Observer:</strong> Synchronisation réactive entre modèle et vue.</li>
+                  <li><strong>Résolution de chemins relatifs:</strong> Portabilité des ressources.</li>
+                  <li><strong>Layout dynamique:</strong> Ajustement automatique des cellules à la fenêtre.</li>
+                  <li><strong>UI en formulaire:</strong> Swing Forms pour accélération du développement.</li>
+                  <li><strong>Intégration audio:</strong> Gestion basique de sons et musiques.</li>
+                  <li><strong>Conception de niveaux texte:</strong> Systèmes simples et extensibles.</li>
+                </ul>
+              </section>
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Fiche technique</h3>
+                  <div class="pill-list">
+                    <span class="pill">Type: puzzle</span>
+                    <span class="pill">Langage: Java</span>
+                    <span class="pill">UI: Swing</span>
+                    <span class="pill">Plateforme: Desktop</span>
+                    <span class="pill">Audio: basique</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>Ce que ce projet montre</h3>
+                  <ul>
+                    <li>Architecture modulaire et scalable en Java.</li>
+                    <li>Gestion intelligente d'assets et chemins relatifs.</li>
+                    <li>UI Swing réactive avec Observer.</li>
+                    <li>Conception et itération de niveaux.</li>
+                    <li>Résolution de problèmes I/O et I/O files.</li>
+                    <li>Intégration basique d'audio dans une appli desktop.</li>
+                  </ul>
+                </section>
+                <section>
+                  <a class="button secondary" href="index.html">Retour au catalogue</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span>Projet suivant: <a href="le-nectar-des-etoiles.html">Le Nectar des Étoiles</a></span>
+            <span><a href="../index.html">Accueil</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../assets/js/portfolio.js"></script>
+  </body>
+</html>

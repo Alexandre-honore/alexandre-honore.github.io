@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Alexandre Honore">
+  <defs>
+    <linearGradient id="bg" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1730" />
+      <stop offset="1" stop-color="#08111f" />
+    </linearGradient>
+    <linearGradient id="accent" x1="18" y1="14" x2="48" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38d6b4" />
+      <stop offset="1" stop-color="#42d5ff" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)" />
+  <circle cx="32" cy="32" r="22" fill="url(#accent)" opacity="0.14" />
+  <circle cx="32" cy="32" r="17" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.45" />
+  <text x="32" y="38" text-anchor="middle" fill="#f6fbff" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="-2">AH</text>
+</svg>

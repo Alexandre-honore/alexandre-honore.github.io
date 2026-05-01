@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Project Teapot | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Project Teapot, un jeu de réflexion coopératif mêlant dimensions 3D et 2D via une mécanique de projection innovante."
+    />
+    <link rel="stylesheet" href="../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Accueil</a>
+            <a href="index.html">Projets</a>
+            <a class="active" href="project-teapot.html">Project Teapot</a>
+            <span class="lang-switch">
+              <a class="active" href="project-teapot.html">FR</a>
+              <a href="../en/projects/project-teapot.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Projet Multijoueur</span>
+              <h1>Project Teapot</h1>
+              <p class="lead">
+                Jeu de réflexion coopératif asymétrique nécessitant une communication constante. Résolvez des énigmes en exploitant une mécanique centrale : l'impact des actions d'un monde 3D sur un plan 2D.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../images/project-teapot/banner.png" alt="Bannière Project Teapot" />
+              </div>
+
+              <section class="content-block">
+                <h2>Le Défi Technique Principal : La Projection 2D/3D</h2>
+                <p>
+                  La mécanique fondatrice de <i>Project Teapot</i>, "Le Crayonneur", a constitué le plus grand défi technique du développement. Elle consiste en une projection en temps réel de l'environnement 3D sur le plan d'évolution du joueur 2D.
+                </p>
+                <p>
+                  Concrètement, le joueur en 3D manipule les éléments du décor (translation, rotation). Chaque mouvement modifie instantanément la topologie du niveau pour le joueur 2D. Il a donc fallu concevoir un système robuste capable de :
+                </p>
+                <ul>
+                  <li>Calculer dynamiquement les collisions d'objets 3D complexes sur un axe bidimensionnel.</li>
+                  <li>Gérer les différents états de matière : les caisses "solides" créent des plateformes projetées, tandis que les caisses "transparentes" effacent les obstacles sur le plan 2D.</li>
+                  <li>Assurer une synchronisation parfaite de ces calculs physiques et visuels entre les deux clients via le réseau.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Concept et Direction Artistique</h2>
+                <p>
+                  Plongés dans un complexe scientifique futuriste et guidés par un robot, deux joueurs testent leur adaptabilité. L'ambiance visuelle accentue la dualité du gameplay :
+                </p>
+                <ul>
+                  <li><strong>Monde 3D :</strong> Assets low-poly avec flat-shading pour une lisibilité optimale de l'espace.</li>
+                  <li><strong>Monde 2D :</strong> Style "dessiné sur Paint", apportant une touche volontairement artisanale et atypique qui contraste avec la rigueur du complexe.</li>
+                </ul>
+                <p>
+                  Une expérience pensée pour les amateurs de jeux comme <i>Portal</i>, <i>It Takes Two</i> ou <i>Split Fiction</i>.
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>Trailer du jeu</h2>
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 2rem;">
+                  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/-W5LEhewvUU" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Galerie</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../images/project-teapot/exemple_projection2d.png" alt="Exemple de la projection 3D vers 2D" />
+                    <figcaption>Mécanique de projection en temps réel</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/project-teapot/crayonneur.png" alt="Le Crayonneur en action" />
+                    <figcaption>Appareil de manipulation "Le Crayonneur"</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/project-teapot/room2.png" alt="Aperçu de la salle d'énigme 2" />
+                    <figcaption>Environnement 3D Low-Poly</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/project-teapot/lobby.png" alt="Lobby du jeu" />
+                    <figcaption>Menu et salle d'attente</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Multijoueur et Architecture</h2>
+                <ul>
+                  <li><strong>Réseau :</strong> Architecture client-serveur avec intégration de l'API Steam. Le créateur de la partie héberge le serveur.</li>
+                  <li><strong>Matchmaking :</strong> Système d'invitation directe via la liste d'amis Steam intra-jeu.</li>
+                  <li><strong>Communication :</strong> Système de <i>Push To Talk</i> intégré.</li>
+                  <li><strong>Contrôles :</strong> Support complet Clavier/Souris et Manette (nécessite la désactivation de Steam Input).</li>
+                </ul>
+              </section>
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Fiche technique</h3>
+                  <div class="pill-list">
+                    <span class="pill">Type: Puzzle / Coop</span>
+                    <span class="pill">Vue: Asymétrique (3D/2D)</span>
+                    <span class="pill">Réseau: P2P (API Steam)</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>Équipe de développement</h3>
+                  <ul>
+                    <li><strong>Adam Gragnic</strong> - Développeur</li>
+                    <li><strong>Alexandre Honoré</strong> - Développeur</li>
+                    <li><strong>Antonin Sylvestre</strong> - Développeur & Animations 2D</li>
+                    <li><strong>Florian Hême</strong> - Développeur</li>
+                    <li><strong>Thomas Blanché</strong> - Développeur & Level Design</li>
+                  </ul>
+                </section>
+                <section>
+                  <h3>Ce que ce projet montre</h3>
+                  <ul>
+                    <li>Développement de mécaniques mathématiques complexes (projection orthographique d'objets 3D et collision dynamique).</li>
+                    <li>Intégration réseau et utilisation de l'API Steam.</li>
+                    <li>Travail collaboratif au sein d'une équipe de 5 développeurs.</li>
+                    <li>Gestion de gameplay asymétrique et d'états synchronisés.</li>
+                  </ul>
+                </section>
+                <section style="margin-top: 1rem;">
+                  <a class="button secondary" href="index.html">Retour au catalogue</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span></span>
+            <span><a href="../index.html">Accueil</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../assets/js/portfolio.js"></script>
+  </body>
+</html>

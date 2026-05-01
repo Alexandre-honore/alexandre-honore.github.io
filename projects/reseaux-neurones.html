@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Réseaux de Neurones | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Projet d'Intelligence Artificielle sur les réseaux de neurones (cartes auto-organisatrices), analyse des paramètres et application à un bras robotique."
+    />
+    <link rel="stylesheet" href="../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Accueil</a>
+            <a href="index.html">Projets</a>
+            <a class="active" href="reseaux-neurones.html">Réseaux de Neurones</a>
+            <span class="lang-switch">
+              <a class="active" href="reseaux-neurones.html">FR</a>
+              <a href="../en/projects/neural-networks.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Projet Académique</span>
+              <h1>Réseaux de Neurones</h1>
+              <p class="lead">
+                Implémentation et analyse approfondie de cartes auto-organisatrices (SOM).
+                Étude scientifique de l'influence des hyperparamètres et application pratique sur
+                la cinématique d'un bras robotique.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../images/reseaux-neurones/carte_neurone.png" alt="Carte de neurones apprise pour le bras robotique" />
+              </div>
+
+              <section class="content-block">
+                <h2>Vue d'ensemble</h2>
+                <p>
+                  Ce projet d'Intelligence Artificielle, réalisé en binôme, se concentre sur l'apprentissage non supervisé à travers les cartes auto-organisatrices de Kohonen. L'objectif était d'adopter une démarche scientifique pour tester, quantifier et visualiser l'impact des différents paramètres d'apprentissage avant de l'appliquer à un cas pratique : la prédiction des mouvements d'un bras robotique.
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>Étude théorique et analyse de l'algorithme</h2>
+                <p>
+                  Une série d'expériences a été mise en place via une fonction de simulation pour étudier le comportement de l'algorithme sur des jeux de données uniformes et non-uniformes. L'analyse s'est concentrée sur trois paramètres fondamentaux :
+                </p>
+                <ul>
+                  <li><strong>Taux d'apprentissage (η) :</strong> Fixé idéalement autour de 0.05. Une valeur trop élevée empêche la stabilisation (erreur de quantification élevée), tandis qu'une valeur à 1 superpose directement les neurones sur les entrées sans organisation globale.</li>
+                  <li><strong>Largeur du voisinage (σ) :</strong> Paramètre influençant la densité de l'auto-organisation. S'il est trop faible, les neurones ne s'organisent pas ; s'il est trop élevé, la carte devient excessivement resserrée au centre.</li>
+                  <li><strong>Pas de temps (N) :</strong> Fixé à 30 000 pour les tests finaux. Bien qu'il ait un impact mineur sur des jeux de données simples, un N élevé tend à stabiliser l'auto-organisation.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Application : Bras Robotique</h2>
+                <p>
+                  Le modèle entraîné a été utilisé pour résoudre des problèmes de cinématique inverse et directe sur un bras robotique à deux articulations.
+                </p>
+                <ul>
+                  <li><strong>Prédiction spatiale et motrice :</strong> En trouvant le neurone gagnant (le plus proche), l'algorithme est capable de déduire la position spatiale (x, y) à partir d'une position motrice (angles θ1, θ2), et inversement.</li>
+                  <li><strong>Génération de trajectoires :</strong> En interpolant mathématiquement les positions motrices entre un point de départ et d'arrivée, la carte permet de prédire avec précision la suite des positions spatiales prises par la main du robot.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Galerie et Résultats</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../images/reseaux-neurones/carte_neurone.png" alt="Carte de neurones après apprentissage" />
+                    <figcaption>Carte auto-organisée finale du bras robotique</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/reseaux-neurones/position_bras.png" alt="Positions spatiales prédites vs réelles" />
+                    <figcaption>Trajectoires prédites et réelles du bras</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/reseaux-neurones/eta-uniforme.png" alt="Graphique de l'évolution selon eta" />
+                    <figcaption>Évolution de l'erreur selon le paramètre η</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Architecture technique</h2>
+                <ul>
+                  <li><strong>Langage :</strong> Python.</li>
+                  <li><strong>Calcul matriciel :</strong> NumPy, indispensable pour la gestion optimisée des vecteurs de poids, des distances euclidiennes et des interpolations spatiales.</li>
+                  <li><strong>Visualisation de données :</strong> Matplotlib, utilisé pour tracer l'évolution des erreurs (quantification vectorielle, auto-organisation) et générer les rendus visuels des cartes et trajectoires.</li>
+                </ul>
+              </section>
+
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Fiche technique</h3>
+                  <div class="pill-list">
+                    <span class="pill">Type: Machine Learning</span>
+                    <span class="pill">Langage: Python</span>
+                    <span class="pill">Maths: NumPy</span>
+                    <span class="pill">Dataviz: Matplotlib</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>Ce que ce projet montre</h3>
+                  <ul>
+                    <li>Démarche scientifique et expérimentale rigoureuse.</li>
+                    <li>Compréhension mathématique des réseaux neuronaux (Kohonen, SOM).</li>
+                    <li>Analyse et réglage fin d'hyperparamètres (η, σ).</li>
+                    <li>Application de l'IA à la physique/cinématique (robotique).</li>
+                    <li>Génération de graphiques d'analyse de performances.</li>
+                  </ul>
+                </section>
+                <section style="margin-top: 1.5rem;">
+                  <a class="button primary" href="https://github.com/Coaraa/projet-reseau-de-neurones" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                </section>
+                <section style="margin-top: 1rem;">
+                  <a class="button secondary" href="index.html">Retour au catalogue</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span></span> <!-- Espace vide laissé volontairement pour respecter ton choix -->
+            <span><a href="../index.html">Accueil</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../assets/js/portfolio.js"></script>
+  </body>
+</html>

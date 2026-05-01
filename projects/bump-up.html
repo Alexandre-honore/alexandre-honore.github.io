@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Bump Up | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Bump Up, un jeu d'escalade en réalité virtuelle basé sur le mouvement des bras et la physique."
+    />
+    <link rel="stylesheet" href="../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Accueil</a>
+            <a href="index.html">Projets</a>
+            <a class="active" href="bump-up.html">Bump Up</a>
+            <span class="lang-switch">
+              <a class="active" href="bump-up.html">FR</a>
+              <a href="../en/projects/bump-up.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Projet VR</span>
+              <h1>Bump Up</h1>
+              <p class="lead">
+                Jeu d'escalade en réalité virtuelle. Atteignez le sommet de la montagne avant la fin de la journée en utilisant des mécaniques de locomotion basées sur la force de vos bras.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../images/bump-up/bu_mountain_fullview.png" alt="Vue d'ensemble de la montagne dans Bump Up" />
+              </div>
+
+              <section class="content-block">
+                <h2>Concept et Objectif</h2>
+                <p>
+                  Bump Up est une expérience en réalité virtuelle centrée sur l'effort physique et l'agilité. L'objectif principal est d'arriver au sommet de la montagne avant la fin du cycle jour/nuit. Pour renforcer l'immersion, l'environnement est dynamique : la météo change et évolue en temps réel en fonction de votre progression en altitude.
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>Gameplay et Mécaniques</h2>
+                <p>
+                  Le système de déplacement repose entièrement sur les mouvements de bras du joueur, sans utilisation des joysticks pour le déplacement continu, ce qui renforce la présence et limite le <i>motion sickness</i> :
+                </p>
+                <ul>
+                  <li><strong>Propulsion :</strong> Le joueur peut bondir en tapant physiquement sur le sol avec ses contrôleurs.</li>
+                  <li><strong>Escalade :</strong> Utilisation des gâchettes pour s'agripper fermement aux parois et se hisser.</li>
+                  <li><strong>Interactions physiques :</strong> Le joueur peut attraper, manipuler et lancer divers objets (cailloux, éléments destructibles) trouvés sur son chemin.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Galerie</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../images/bump-up/bu_view_from_smow_biome.png" alt="Vue depuis le biome enneigé" />
+                    <figcaption>Progression dans le biome enneigé</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/bump-up/bu_mountain_view_only_top.png" alt="Vue sur le sommet de la montagne" />
+                    <figcaption>Aperçu du sommet à atteindre</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/bump-up/bu_view_from_top.png" alt="Vue depuis le sommet" />
+                    <figcaption>Panorama depuis le sommet</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Défis techniques</h2>
+                <ul>
+                  <li><strong>Locomotion VR :</strong> Implémentation d'un système physique robuste permettant de traduire la vélocité des contrôleurs en force de propulsion.</li>
+                  <li><strong>Cycle dynamique :</strong> Synchronisation de la météo et de la luminosité (fin de journée) avec la progression spatiale du joueur (altitude).</li>
+                  <li><strong>Physique des objets :</strong> Gestion des collisions, de la préhension et de la destruction des objets interactifs en VR.</li>
+                </ul>
+              </section>
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Fiche technique</h3>
+                  <div class="pill-list">
+                    <span class="pill">Type: Jeu VR</span>
+                    <span class="pill">Locomotion: Physique / Bras</span>
+                    <span class="pill">Météo dynamique</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>Ce que ce projet montre</h3>
+                  <ul>
+                    <li>Développement de mécaniques de locomotion spécifiques à la VR.</li>
+                    <li>Gestion avancée de la physique (propulsion, lancer, destruction).</li>
+                    <li>Level design vertical.</li>
+                    <li>Création d'environnements dynamiques réactifs à la progression.</li>
+                  </ul>
+                </section>
+                <section style="margin-top: 1.5rem;">
+                  <a class="button primary" href="https://alexandre-h.itch.io/bump-up" target="_blank" rel="noopener noreferrer">Voir sur Itch.io</a>
+                </section>
+                <section style="margin-top: 1rem;">
+                  <a class="button secondary" href="index.html">Retour au catalogue</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span></span>
+            <span><a href="../index.html">Accueil</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../assets/js/portfolio.js"></script>
+  </body>
+</html>

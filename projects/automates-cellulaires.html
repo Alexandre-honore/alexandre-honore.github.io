@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Automates Cellulaires | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Implémentation et visualisation d'automates cellulaires en Java avec un moteur de règles générique entièrement personnalisable."
+    />
+    <link rel="stylesheet" href="../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Accueil</a>
+            <a href="index.html">Projets</a>
+            <a class="active" href="automates-cellulaires.html">Automates Cellulaires</a>
+            <span class="lang-switch">
+              <a class="active" href="automates-cellulaires.html">FR</a>
+              <a href="../en/projects/cellular-automata.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Projet Java</span>
+              <h1>Automates Cellulaires</h1>
+              <p class="lead">
+                Plateforme de simulation de systèmes complexes. La réussite majeure du projet repose sur la conception d'un moteur générique permettant la création et l'interprétation de règles de transition entièrement personnalisables.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../images/automates/at_average_cross.png" alt="Visualisation d'un automate Average" />
+              </div>
+
+              <section class="content-block">
+                <h2>Vue d'ensemble</h2>
+                <p>
+                  Ce projet implémente une grande variété d'automates cellulaires, des modèles mathématiques permettant de simuler l'évolution de cellules dans un espace donné. L'application propose une interface graphique complète pour observer l'émergence de comportements complexes à partir de règles locales, en allant bien au-delà des automates classiques pré-programmés.
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>Le défi technologique : Un moteur de règles sur-mesure</h2>
+                <p>
+                  L'enjeu principal et la plus grande difficulté technique de ce projet ont été de s'affranchir du "hardcoding". Au lieu de coder statiquement chaque automate, nous avons développé un moteur générique capable d'interpréter des fichiers de configuration JSON à l'exécution.
+                </p>
+                <p>
+                  Ce système permet à l'utilisateur de définir de A à Z ses propres automates :
+                </p>
+                <ul>
+                  <li><strong>Structure :</strong> Définition de la dimensionnalité et de la liste des états possibles (l'alphabet).</li>
+                  <li><strong>Voisinage pondéré :</strong> Spécification des coordonnées exactes des voisins pris en compte et attribution de poids (permettant par exemple de simuler le vent dans un feu de forêt).</li>
+                  <li><strong>Logique et Stochastique :</strong> Définition de tableaux de règles de transition croisées et implémentation de probabilités (la somme devant valoir 1) pour introduire de l'aléatoire.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Automates classiques implémentés</h2>
+                <p>Grâce à ce moteur, plusieurs modèles ont pu être facilement recréés :</p>
+                <ul>
+                  <li><strong>Jeu de la vie :</strong> Le classique automate 2D illustrant l'auto-organisation.</li>
+                  <li><strong>Propagation de feu de forêt :</strong> Simulation incluant des probabilités de propagation et d'apparition spontanée.</li>
+                  <li><strong>Automates 1D :</strong> Exploration des règles élémentaires (comme la Règle 30) basées sur des numéros de règles binaires.</li>
+                  <li><strong>Règles continues (Average & Majority) :</strong> Modélisation de vagues de chaleur ou de consensus dans des dimensions arbitraires.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Fonctionnalités de l'interface</h2>
+                <ul>
+                  <li><strong>Support Hexagonal :</strong> Adaptation du rendu et du voisinage pour des grilles en nid d'abeille.</li>
+                  <li><strong>Édition de carte :</strong> Outils de dessin interactifs, de remplacement d'états, de génération aléatoire et système de sauvegarde/chargement.</li>
+                  <li><strong>Contrôle de simulation :</strong> Lecture, pause, avance pas-à-pas et réglage de la vitesse de calcul en temps réel.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Galerie</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../images/automates/at_gameoflife.gif" alt="Animation du Jeu de la vie" />
+                    <figcaption>Jeu de la vie (2D)</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/automates/at_wood_fire.gif" alt="Animation feu de forêt" />
+                    <figcaption>Propagation d'un incendie (avec vent et probabilités)</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/automates/at_rule30.png" alt="Règle 30" />
+                    <figcaption>Automate 1D : Règle 30</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/automates/at_rule18.png" alt="Règle 18" />
+                    <figcaption>Automate 1D : Règle 18</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Architecture technique</h2>
+                <ul>
+                  <li><strong>Langage :</strong> Java 24.</li>
+                  <li><strong>Interface Graphique :</strong> JavaFX avec architecture MVC (fichiers FXML).</li>
+                  <li><strong>Moteur JSON :</strong> Parsing et interprétation dynamique des fichiers de règles vers la logique objet Java.</li>
+                  <li><strong>Modularité :</strong> Séparation nette entre le cœur logique (core), les moteurs de règles (rules) et l'interface (gui).</li>
+                  <li><strong>Build system :</strong> Gradle.</li>
+                </ul>
+              </section>
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Fiche technique</h3>
+                  <div class="pill-list">
+                    <span class="pill">Java 24</span>
+                    <span class="pill">JavaFX</span>
+                    <span class="pill">Architecture MVC</span>
+                    <span class="pill">JSON Parsing</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>Ce que ce projet montre</h3>
+                  <ul>
+                    <li><strong>Conception d'un moteur générique dynamique.</strong></li>
+                    <li>Capacité d'abstraction algorithmique (passage de règles en dur à des données interprétées).</li>
+                    <li>Modélisation de logiques stochastiques et de voisinages complexes.</li>
+                    <li>Maîtrise de la POO et de l'architecture logicielle en Java.</li>
+                  </ul>
+                </section>
+                <section style="margin-top: 1.5rem;">
+                  <a class="button primary" href="https://github.com/antonin-slv/AutomateCellulaire.git" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                </section>
+                <section style="margin-top: 1rem;">
+                  <a class="button secondary" href="index.html">Retour au catalogue</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span></span>
+            <span><a href="../index.html">Accueil</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../assets/js/portfolio.js"></script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Couverture Réseau (Telecom) | Alexandre Honoré</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Visualisation interactive de la couverture réseau française sous forme de carte et de tableau."
+    />
+    <link rel="stylesheet" href="../assets/css/portfolio.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+      <header class="topbar">
+        <div class="container topbar-row">
+          <a class="brand" href="../index.html">Alexandre Honoré</a>
+          <button class="mobile-toggle" type="button">Menu</button>
+          <nav class="topnav">
+            <a href="../index.html">Accueil</a>
+            <a href="index.html">Projets</a>
+            <a class="active" href="telecom.html">Telecom</a>
+            <span class="lang-switch">
+              <a class="active" href="telecom.html">FR</a>
+              <a href="../en/projects/telecom.html">EN</a>
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="page-hero reveal">
+            <div class="panel">
+              <span class="eyebrow">Projet</span>
+              <h1>Couverture Réseau</h1>
+              <p class="lead">
+                Visualisation interactive de la couverture réseau en France. Une application destinée aux professionnels pour repérer les zones blanches et aux particuliers pour vérifier l'éligibilité de leur logement.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-layout reveal">
+            <article class="content-panel">
+              <div class="project-hero-image">
+                <img src="../images/telecom/telecom_acceuil.png" alt="Accueil du projet Telecom" />
+              </div>
+
+              <section class="content-block">
+                <h2>Vue d'ensemble</h2>
+                <p>
+                  Ce projet fournit une visualisation interactive de la couverture réseau en France via une interface cartographique et des tableaux de données. Il exploite une base de données répertoriant les communes françaises pour cartographier précisément l'accès au réseau, en offrant des filtres de performance (débit).
+                </p>
+              </section>
+
+              <section class="content-block">
+                <h2>Fonctionnalités principales</h2>
+                <ul>
+                  <li><strong>Visualisation interactive :</strong> Exploration libre de la carte de France pour analyser la couverture globale.</li>
+                  <li><strong>Zoom dynamique :</strong> Apparition détaillée des communes lors du zoom sur une zone spécifique.</li>
+                  <li><strong>Filtrage par débit :</strong> Isolation de la couverture réseau exclusive selon des seuils de débit spécifiques.</li>
+                  <li><strong>Mise à jour des données :</strong> Structure pensée pour refléter les derniers déploiements du secteur.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Galerie</h2>
+                <div class="gallery">
+                  <figure>
+                    <img src="../images/telecom/telecom_map_unzoom.png" alt="Vue globale de la carte" />
+                    <figcaption>Vue globale de la couverture</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/telecom/telecom_map_zoom.png" alt="Vue zoomée sur les communes" />
+                    <figcaption>Zoom et apparition des communes</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/telecom/telecom_city_detail.png" alt="Détails de la couverture d'une ville" />
+                    <figcaption>Détails réseau par commune</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="content-block">
+                <h2>Architecture technique</h2>
+                <h3>Environnement et Base de données</h3>
+                <ul>
+                  <li><strong>Node.js & npm :</strong> Environnement d'exécution et gestionnaire de paquets pour le serveur.</li>
+                  <li><strong>Base de données :</strong> MySQL, instanciée localement (via XAMPP/Laragon).</li>
+                  <li><strong>Données géographiques :</strong> Fichier d'initialisation <code>communes.sql</code> regroupant les coordonnées et statistiques.</li>
+                </ul>
+
+                <h3>Structure d'exécution</h3>
+                <ul>
+                  <li><strong>Configuration :</strong> Fichier <code>config.json</code> pour la liaison serveur/base de données.</li>
+                  <li><strong>Serveur local :</strong> Port 3000 utilisé pour le développement et l'accès à l'interface cartographique.</li>
+                </ul>
+              </section>
+
+              <section class="content-block">
+                <h2>Points clés d'apprentissage</h2>
+                <ul>
+                  <li>Intégration d'une bibliothèque cartographique interactive.</li>
+                  <li>Connexion et requêtage entre un serveur Node.js et une base de données MySQL.</li>
+                  <li>Traitement et affichage dynamique de données volumineuses (communes françaises).</li>
+                  <li>Mise en place de filtres interactifs (débit) modifiant le rendu visuel en temps réel.</li>
+                </ul>
+              </section>
+            </article>
+
+            <aside class="side-panel">
+              <div class="side-list">
+                <section>
+                  <h3>Fiche technique</h3>
+                  <div class="pill-list">
+                    <span class="pill">Type: Dataviz / Cartographie</span>
+                    <span class="pill">Stack: Node.js</span>
+                    <span class="pill">DB: MySQL</span>
+                    <span class="pill">Outils: npm, Git</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>Ce que ce projet montre</h3>
+                  <ul>
+                    <li>Développement d'interfaces orientées données (Dataviz).</li>
+                    <li>Gestion de bases de données relationnelles pour application web.</li>
+                    <li>Architecture client-serveur locale.</li>
+                    <li>UX appliquée à la cartographie.</li>
+                  </ul>
+                </section>
+                <section>
+                  <a class="button secondary" href="../index.html">Retour à l'acceuil</a>
+                </section>
+                <section style="margin-top: 1rem;">
+                  <a class="button primary" href="https://github.com/Alexandre-honore/telecom" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                </section>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="foot">
+            <span>Projet précédent: <a href="isiweb4shop.html">IsIWeb4Shop</a></span>
+            <span><a href="../index.html">Accueil</a></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <script src="../assets/js/portfolio.js"></script>
+  </body>
+</html>

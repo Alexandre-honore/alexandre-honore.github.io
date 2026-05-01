@@ -330,6 +330,18 @@
 (() => {
   const pathname = window.location.pathname;
   const pathParts = pathname.split('/').filter(Boolean);
+  const isWindowsFilePath = /^[A-Za-z]:$/.test(pathParts[0] || '');
+  const folderDepth = Math.max(pathParts.length - (isWindowsFilePath ? 3 : 1), 0);
+  const faviconHref = `${'../'.repeat(folderDepth)}assets/favicon.svg`;
+
+  if (!document.querySelector('link[rel="icon"][type="image/svg+xml"]')) {
+    const faviconLink = document.createElement('link');
+    faviconLink.rel = 'icon';
+    faviconLink.type = 'image/svg+xml';
+    faviconLink.href = faviconHref;
+    document.head.appendChild(faviconLink);
+  }
+
   const isEnglish = pathParts[0] === 'en';
   const localizedParts = isEnglish ? pathParts.slice(1) : pathParts;
   const filename = localizedParts[localizedParts.length - 1] || 'index.html';
