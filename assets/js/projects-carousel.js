@@ -40,7 +40,7 @@
         {
           category: 'Web',
           title: 'Network Coverage',
-          tags: ['Node.js', 'MySQL', 'Data viz'],
+          tags: ['Node.js', 'MySQL', 'React'],
           description: 'Interactive map and data table for French network coverage.',
           image: `${basePath}/images/telecom/telecom_acceuil.png`,
           link: 'projects/telecom.html',
@@ -56,7 +56,7 @@
         {
           category: 'Games',
           title: 'Bump Up',
-          tags: ['VR', 'Unity', 'Physics'],
+          tags: ['VR', 'Unreal Engine', 'Physics'],
           description: 'VR climbing game focused on arm-based locomotion and altitude progression.',
           image: `${basePath}/images/bump-up/bu_mountain_fullview.png`,
           link: 'projects/bump-up.html',
@@ -122,7 +122,7 @@
         {
           category: 'Web',
           title: 'Couverture Réseau',
-          tags: ['Node.js', 'MySQL', 'Dataviz'],
+          tags: ['Node.js', 'MySQL', 'React'],
           description: 'Carte interactive et tableau de données sur la couverture réseau française.',
           image: `${basePath}/images/telecom/telecom_acceuil.png`,
           link: 'projects/telecom.html',
@@ -138,7 +138,7 @@
         {
           category: 'Jeux',
           title: 'Bump Up',
-          tags: ['VR', 'Unity', 'Physique'],
+          tags: ['VR', 'Unreal Engine', 'Physique'],
           description: 'Jeu VR d’escalade centré sur la locomotion par les bras et la progression en altitude.',
           image: `${basePath}/images/bump-up/bu_mountain_fullview.png`,
           link: 'projects/bump-up.html',

@@ -441,7 +441,46 @@
     const currentYear = new Date().getFullYear();
     const cvHref = `/resources/cv_honore_alexandre${isEnglish ? '_en' : ''}.pdf`;
 
-    foot.innerHTML = `
+    // Extract previous/next project links from existing spans, then remove them.
+    const prevLabel = isEnglish ? 'Previous project' : 'Projet précédent';
+    const nextLabel = isEnglish ? 'Next project' : 'Projet suivant';
+    let prevHref = null;
+    let nextHref = null;
+
+    Array.from(foot.querySelectorAll('span')).forEach((sp) => {
+      const txt = (sp.textContent || '').trim();
+      if (txt.includes(prevLabel)) {
+        const a = sp.querySelector('a');
+        if (a) prevHref = a.getAttribute('href');
+        sp.remove();
+      } else if (txt.includes(nextLabel)) {
+        const a = sp.querySelector('a');
+        if (a) nextHref = a.getAttribute('href');
+        sp.remove();
+      } else if (txt.includes(isEnglish ? 'Home' : 'Accueil')) {
+        // Remove the home link span as requested
+        sp.remove();
+      }
+    });
+
+    // Use the primary button style from the homepage and remove arrow glyphs
+    const prevBtn = prevHref ? `<a class="button primary nav-prev" href="${prevHref}" aria-label="${isEnglish ? 'Previous project' : 'Projet précédent'}">${isEnglish ? 'Previous' : 'Précédent'}</a>` : '';
+    const nextBtn = nextHref ? `<a class="button primary nav-next" href="${nextHref}" aria-label="${isEnglish ? 'Next project' : 'Projet suivant'}">${isEnglish ? 'Next' : 'Suivant'}</a>` : '';
+
+    // Add classes to indicate presence of prev/next so CSS can align a single button
+    let navClasses = 'project-nav';
+    if (prevHref) navClasses += ' has-prev';
+    if (nextHref) navClasses += ' has-next';
+
+    const projectNavMarkup = `
+      <div class="${navClasses}">
+        ${prevBtn}
+        ${nextBtn}
+      </div>
+    `;
+
+    // Render cleaned project nav + global site footer
+    foot.innerHTML = `${projectNavMarkup}
       <section class="site-footer">
         <div class="footer-inner">
           <div class="footer-head">
@@ -475,8 +514,7 @@
             <span>© ${currentYear} Alexandre Honore</span>
           </div>
         </div>
-      </section>
-    `;
+      </section>`;
   }
 
   const observer = new IntersectionObserver(

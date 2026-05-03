@@ -79,6 +79,48 @@ img {
   top: 65px;
   left: -80px;
 }
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2.2rem;
+}
+
+.project-nav .button {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.project-nav .nav-prev {
+  background: var(--muted-bg, rgba(255,255,255,0.03));
+  color: var(--text, #e6eef9);
+}
+
+.project-nav .nav-next {
+  background: var(--muted-bg, rgba(255,255,255,0.03));
+  color: var(--text, #e6eef9);
+}
+
+/* If only the next button exists, align it to the right; if only prev exists, align left */
+.project-nav.has-next:not(.has-prev) {
+  justify-content: flex-end;
+}
+.project-nav.has-prev:not(.has-next) {
+  justify-content: flex-start;
+}
+
+@media (max-width: 640px) {
+  .project-nav {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
 
 .orb.two {
   width: 260px;

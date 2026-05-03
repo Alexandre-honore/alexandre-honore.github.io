@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="sokIOban, clone de Sokoban en Java Swing avec architecture modulaire et gestion d'assets."
+      content="sokIOban, clone de Sokoban en Java Swing avec architecture modulaire"
     />
     <link rel="stylesheet" href="../assets/css/portfolio.css" />
   </head>
@@ -38,7 +38,7 @@
               <h1>sokIOban</h1>
               <p class="lead">
                 Clone de Sokoban en Java Swing où chaque niveau demande stratégie et réflexion.
-                Architecture modulaire mettant en avant la séparation Model/View et gestion d'assets.
+                Architecture modulaire mettant en avant la séparation Model/Vue.
               </p>
             </div>
           </section>
@@ -54,8 +54,7 @@
                 <p>
                   sokIOban est un puzzle game inspiré du classique Sokoban, implémenté en Java avec
                   l'interface Swing. Le nom et le design visual sont une référence à mon projet
-                  <strong>It Takes IO</strong>, fusionnant les concepts de signaux binaires avec
-                  la mécanique de puzzle poussée de caisses. L'objectif : pousser toutes les caisses
+                  <strong>It Takes IO</strong>. L'objectif : pousser toutes les caisses
                   vers leurs emplacements respectifs en naviguant des niveaux à difficultés croissantes.
                 </p>
               </section>
@@ -95,7 +94,6 @@
                 <ul>
                   <li><strong>Java:</strong> Langage principal avec Swing pour l'interface.</li>
                   <li><strong>Swing:</strong> UI réactive avec pattern Observer pour rafraîchissement.</li>
-                  <li><strong>ImageIO:</strong> Chargement et gestion des assets visuels.</li>
                 </ul>
 
                 <h3>Structure modulaire (par paquets)</h3>
@@ -105,32 +103,13 @@
                   <li><strong>Vue:</strong> Composants visuels et rendering.</li>
                   <li><strong>Enum:</strong> Énumérations (directions, états du jeu).</li>
                 </ul>
-
-                <h3>Fichiers clés</h3>
-                <ul>
-                  <li><strong>MF.java:</strong> Fenêtre principale et orchestration.</li>
-                  <li><strong>Menu.java:</strong> Système de menu (conçu via formulaire Menu.form).</li>
-                  <li><strong>Grid.java:</strong> Logique centralisée du jeu (grille, niveaux, cellules, entités).</li>
-                  <li><strong>Player.java:</strong> Entité joueur et mouvements.</li>
-                  <li><strong>Sound.java:</strong> Gestion intégration d'audio.</li>
-                </ul>
-
-                <h3>Gestion des ressources</h3>
-                <ul>
-                  <li><strong>Niveaux:</strong> Format texte stockés dans le dossier <code>levels/</code>.</li>
-                  <li><strong>Visuels:</strong> Images (PNG) du dossier <code>assets/</code>.</li>
-                  <li><strong>Audio:</strong> Fichiers musiques du dossier <code>musics/</code>.</li>
-                  <li><strong>Chemins relatifs:</strong> Gestion robuste des ressources indépendante du répertoire courant.</li>
-                </ul>
               </section>
 
               <section class="content-block">
                 <h2>Points clés d'apprentissage</h2>
                 <ul>
                   <li><strong>Architecture Model/View:</strong> Séparation nette des responsabilités.</li>
-                  <li><strong>Gestion d'assets:</strong> Chargement dynamique d'images et ressources.</li>
                   <li><strong>Pattern Observer:</strong> Synchronisation réactive entre modèle et vue.</li>
-                  <li><strong>Résolution de chemins relatifs:</strong> Portabilité des ressources.</li>
                   <li><strong>Layout dynamique:</strong> Ajustement automatique des cellules à la fenêtre.</li>
                   <li><strong>UI en formulaire:</strong> Swing Forms pour accélération du développement.</li>
                   <li><strong>Intégration audio:</strong> Gestion basique de sons et musiques.</li>
@@ -148,18 +127,20 @@
                     <span class="pill">Langage: Java</span>
                     <span class="pill">UI: Swing</span>
                     <span class="pill">Plateforme: Desktop</span>
-                    <span class="pill">Audio: basique</span>
+                  </div>
+                </section>
+                <section>
+                  <h3>Liens du projet</h3>
+                  <div class="pill-list">
+                    <a class="button secondary" href="https://github.com/Alexandre-honore/Sokoban" target="_blank" rel="noopener noreferrer">GitHub</a>
                   </div>
                 </section>
                 <section>
                   <h3>Ce que ce projet montre</h3>
                   <ul>
                     <li>Architecture modulaire et scalable en Java.</li>
-                    <li>Gestion intelligente d'assets et chemins relatifs.</li>
                     <li>UI Swing réactive avec Observer.</li>
                     <li>Conception et itération de niveaux.</li>
-                    <li>Résolution de problèmes I/O et I/O files.</li>
-                    <li>Intégration basique d'audio dans une appli desktop.</li>
                   </ul>
                 </section>
                 <section>
